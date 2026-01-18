@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manara | Illuminating Minds</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts placeholder if needed, though we are using system fonts as fallbacks per plan -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Small override to inject a close match to Gilroy if not available */
+        :root {
+            --font-body: 'Outfit', 'Gilroy', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Manara</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#services">What We Do</a></li>
+                    <li><a href="#about">Who We Are</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact" class="btn btn-primary">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Illuminating minds</h1>
+                <p>Putting thoughtful design into online education. We craft learning experiences that engage, inspire, and deliver results.</p>
+                <a href="#services" class="btn btn-primary">Learn more</a>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-shape-bg">
+                    <!-- Symbolic illustration of "Illuminating" -->
+                    <div style="display: flex; justify-content: center; align-items: center; height: 100%; color: var(--color-text-primary); font-family: var(--font-heading); font-size: 2rem; text-align: center; padding: 2rem;">
+                         Start Learning<br>💡
+                    </div>
+                </div>
+                <!-- Playful accent shape -->
+                <div style="position: absolute; top: -20px; right: -20px; width: 60px; height: 60px; border-radius: 50%; background: var(--accent-yellow); z-index: -1;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">What We Do</h2>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Course Builds -->
+                <div class="service-card">
+                    <div style="width: 50px; height: 4px; background: var(--accent-orange); margin-bottom: 1.5rem;"></div>
+                    <h3>Course Builds</h3>
+                    <p>Instructional design, Full learning experience development, and Graphic design tailored to your educational goals.</p>
+                </div>
+
+                <!-- Course Quality Reviews -->
+                <div class="service-card">
+                    <div style="width: 50px; height: 4px; background: var(--color-secondary-blue); margin-bottom: 1.5rem;"></div>
+                    <h3>Quality Reviews</h3>
+                    <p>Rigorous evaluation of courses based on industry standards and best practices to ensure excellence.</p>
+                </div>
+
+                <!-- LMS Expertise -->
+                <div class="service-card">
+                    <div style="width: 50px; height: 4px; background: var(--accent-blue); margin-bottom: 1.5rem;"></div>
+                    <h3>LMS Expertise</h3>
+                    <p>Deep expertise in platforms like Brightspace, Canvas, and Moodle to optimize your delivery infrastructure.</p>
+                </div>
+
+                <!-- Multimedia Design -->
+                <div class="service-card">
+                    <div style="width: 50px; height: 4px; background: var(--accent-yellow); margin-bottom: 1.5rem;"></div>
+                    <h3>Multimedia Design</h3>
+                    <p>Creating engaging videos, animations, and interactive content that brings learning material to life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commitment Section -->
+    <section id="about" class="section commitment">
+        <div class="container commitment-content">
+            <h2 class="section-title">Our Commitment</h2>
+            <p>At Manara, we focus on quality, client satisfaction, and personalized support. We believe that online education should be as human and engaging as face-to-face learning.</p>
+            <p>Our team of experts works closely with you to understand your unique needs and deliver solutions that truly illuminate minds.</p>
+            <br>
+            <a href="#contact" class="btn btn-secondary">Work With Us</a>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Recent Projects</h2>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="project-card">
+                    <span class="project-tag">Pharma</span>
+                    <h3>Pharmaceutical Industry</h3>
+                    <p>Developed compliance and training modules for a leading pharmaceutical company.</p>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-tag">Higher Ed</span>
+                    <h3>Higher Education</h3>
+                    <p>Redesigned core curriculum courses for a major university's online program.</p>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-tag">Construction</span>
+                    <h3>Construction Industry</h3>
+                    <p>Safety training and certification tracking systems for construction workforce.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <h2 class="section-title">Get In Touch</h2>
+                <p>Ready to start your project? Send us a message.</p>
+            </div>
+
+            <div class="contact-container">
+                <form>
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" class="form-control" placeholder="Jane">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" class="form-control" placeholder="Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="jane@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" placeholder="Tell us about your project..."></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+        <!-- Decorative doodles -->
+        <div style="position: absolute; bottom: 5%; left: 5%; width: 100px; height: 100px; border: 3px solid var(--accent-blue); border-radius: 50%; opacity: 0.5;"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem; color: #fff;">Manara</div>
+                    <p>Illuminating minds through design.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@manaralearn.com">info@manaralearn.com</a></li>
+                        <li>Toronto, ON</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Manara Learn. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
