@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Header -->
@@ -25,8 +27,8 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="#services">What We Do</a></li>
-                    <li><a href="#about">Who We Are</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="about.html">Who We Are</a></li>
+                    <li><a href="#portfolio">Recent Projects</a></li>
                     <li><a href="#contact" class="btn btn-primary">Contact Us</a></li>
                 </ul>
             </nav>
@@ -38,18 +40,25 @@
         <div class="container hero-content">
             <div class="hero-text">
                 <h1>Illuminating minds</h1>
-                <p>Putting thoughtful design into online education. We craft learning experiences that engage, inspire, and deliver results.</p>
-                <a href="#services" class="btn btn-primary">Learn more</a>
+                <p>Putting thoughtful design into online education. We craft learning experiences that engage, inspire,
+                    and deliver results.</p>
+                <div class="hero-btns">
+                    <a href="#services" class="btn btn-primary">Learn more</a>
+                    <a href="#contact" class="btn btn-secondary">Contact us</a>
+                </div>
             </div>
             <div class="hero-visual">
                 <div class="hero-shape-bg">
                     <!-- Symbolic illustration of "Illuminating" -->
-                    <div style="display: flex; justify-content: center; align-items: center; height: 100%; color: var(--color-text-primary); font-family: var(--font-heading); font-size: 2rem; text-align: center; padding: 2rem;">
-                         Start Learning<br>💡
+                    <div
+                        style="display: flex; justify-content: center; align-items: center; height: 100%; color: var(--color-text-primary); font-family: var(--font-heading); font-size: 2rem; text-align: center; padding: 2rem;">
+                        Start Learning<br>💡
                     </div>
                 </div>
                 <!-- Playful accent shape -->
-                <div style="position: absolute; top: -20px; right: -20px; width: 60px; height: 60px; border-radius: 50%; background: var(--accent-yellow); z-index: -1;"></div>
+                <div
+                    style="position: absolute; top: -20px; right: -20px; width: 60px; height: 60px; border-radius: 50%; background: var(--accent-yellow); z-index: -1;">
+                </div>
             </div>
         </div>
     </section>
@@ -60,74 +69,96 @@
             <div class="text-center">
                 <h2 class="section-title">What We Do</h2>
             </div>
-            
+
             <div class="services-grid">
                 <!-- Course Builds -->
                 <div class="service-card">
-                    <div style="width: 50px; height: 4px; background: var(--accent-orange); margin-bottom: 1.5rem;"></div>
+                    <div style="width: 50px; height: 4px; background: var(--accent-orange); margin-bottom: 1.5rem;">
+                    </div>
                     <h3>Course Builds</h3>
-                    <p>Instructional design, Full learning experience development, and Graphic design tailored to your educational goals.</p>
+                    <p>Instructional design, Full learning experience development, and Graphic design tailored to your
+                        educational goals.</p>
                 </div>
 
                 <!-- Course Quality Reviews -->
                 <div class="service-card">
-                    <div style="width: 50px; height: 4px; background: var(--color-secondary-blue); margin-bottom: 1.5rem;"></div>
+                    <div
+                        style="width: 50px; height: 4px; background: var(--color-secondary-blue); margin-bottom: 1.5rem;">
+                    </div>
                     <h3>Quality Reviews</h3>
-                    <p>Rigorous evaluation of courses based on industry standards and best practices to ensure excellence.</p>
+                    <p>Rigorous evaluation of courses based on industry standards and best practices to ensure
+                        excellence.</p>
                 </div>
 
                 <!-- LMS Expertise -->
                 <div class="service-card">
                     <div style="width: 50px; height: 4px; background: var(--accent-blue); margin-bottom: 1.5rem;"></div>
                     <h3>LMS Expertise</h3>
-                    <p>Deep expertise in platforms like Brightspace, Canvas, and Moodle to optimize your delivery infrastructure.</p>
+                    <p>Deep expertise in platforms like Brightspace, Canvas, and Moodle to optimize your delivery
+                        infrastructure.</p>
                 </div>
 
                 <!-- Multimedia Design -->
                 <div class="service-card">
-                    <div style="width: 50px; height: 4px; background: var(--accent-yellow); margin-bottom: 1.5rem;"></div>
+                    <div style="width: 50px; height: 4px; background: var(--accent-yellow); margin-bottom: 1.5rem;">
+                    </div>
                     <h3>Multimedia Design</h3>
-                    <p>Creating engaging videos, animations, and interactive content that brings learning material to life.</p>
+                    <p>Creating engaging videos, animations, and interactive content that brings learning material to
+                        life.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Commitment Section -->
-    <section id="about" class="section commitment">
+    <section class="section commitment">
         <div class="container commitment-content">
             <h2 class="section-title">Our Commitment</h2>
-            <p>At Manara, we focus on quality, client satisfaction, and personalized support. We believe that online education should be as human and engaging as face-to-face learning.</p>
-            <p>Our team of experts works closely with you to understand your unique needs and deliver solutions that truly illuminate minds.</p>
+            <p>At Manara, we focus on quality, client satisfaction, and personalized support. We believe that online
+                education should be as human and engaging as face-to-face learning.</p>
+            <p>Our team of experts works closely with you to understand your unique needs and deliver solutions that
+                truly illuminate minds.</p>
             <br>
-            <a href="#contact" class="btn btn-secondary">Work With Us</a>
+            <a href="about.html" class="btn btn-secondary">More About Us</a>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Recent Projects Section (Refactored) -->
     <section id="portfolio" class="section portfolio">
         <div class="container">
-            <div class="text-center">
+            <div class="text-center" style="margin-bottom: 4rem;">
                 <h2 class="section-title">Recent Projects</h2>
             </div>
 
             <div class="portfolio-grid">
-                <div class="project-card">
-                    <span class="project-tag">Pharma</span>
+                <!-- Column 1 -->
+                <div class="project-col">
                     <h3>Pharmaceutical Industry</h3>
-                    <p>Developed compliance and training modules for a leading pharmaceutical company.</p>
+                    <div class="project-visual" style="background-color: var(--bg-blue-light);">
+                        <div class="placeholder-icon">💊</div>
+                    </div>
+                    <p class="project-desc">Developed compliance and interactive training modules for a leading
+                        pharmaceutical company to ensure regulatory standards.</p>
                 </div>
 
-                <div class="project-card">
-                    <span class="project-tag">Higher Ed</span>
+                <!-- Column 2 -->
+                <div class="project-col">
                     <h3>Higher Education</h3>
-                    <p>Redesigned core curriculum courses for a major university's online program.</p>
+                    <div class="project-visual" style="background-color: var(--bg-pink-light);">
+                        <div class="placeholder-icon">🎓</div>
+                    </div>
+                    <p class="project-desc">Redesigned core curriculum courses for a major university's online program,
+                        focusing on student engagement and retention.</p>
                 </div>
 
-                <div class="project-card">
-                    <span class="project-tag">Construction</span>
+                <!-- Column 3 -->
+                <div class="project-col">
                     <h3>Construction Industry</h3>
-                    <p>Safety training and certification tracking systems for construction workforce.</p>
+                    <div class="project-visual" style="background-color: var(--bg-yellow-pink);">
+                        <div class="placeholder-icon">🏗️</div>
+                    </div>
+                    <p class="project-desc">Implemented safety training and certification tracking systems for a
+                        large-scale construction workforce.</p>
                 </div>
             </div>
         </div>
@@ -157,14 +188,17 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" class="form-control" placeholder="Tell us about your project..."></textarea>
+                        <textarea id="message" class="form-control"
+                            placeholder="Tell us about your project..."></textarea>
                     </div>
                     <button type="button" class="btn btn-primary" style="width: 100%;">Send Message</button>
                 </form>
             </div>
         </div>
         <!-- Decorative doodles -->
-        <div style="position: absolute; bottom: 5%; left: 5%; width: 100px; height: 100px; border: 3px solid var(--accent-blue); border-radius: 50%; opacity: 0.5;"></div>
+        <div
+            style="position: absolute; bottom: 5%; left: 5%; width: 100px; height: 100px; border: 3px solid var(--accent-blue); border-radius: 50%; opacity: 0.5;">
+        </div>
     </section>
 
     <!-- Footer -->
@@ -197,5 +231,17 @@
         </div>
     </footer>
 
+    <!-- Scroll Script for Navbar -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
+
 </html>
