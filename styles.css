@@ -108,8 +108,8 @@ img {
     padding: 0.8rem 2rem;
     font-family: var(--font-body);
     font-weight: 700;
-    border-radius: 8px;
-    /* Audacy style rounded corners */
+    border-radius: 0px;
+    /* Audacy style square corners */
     text-transform: capitalize;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -128,11 +128,44 @@ img {
     transform: translateY(-2px);
 }
 
+/* Specific Hero CTA Button (Dark Blue -> Salmon) */
+.btn-hero-cta {
+    background-color: var(--color-text-primary);
+    /* Dark Blue */
+    color: var(--color-white);
+}
+
+.btn-hero-cta:hover {
+    background-color: var(--color-primary-btn);
+    /* Salmon */
+    transform: translateY(-2px);
+}
+
+/* Navbar "Contact Us" Button (Salmon -> Dark Blue) */
+.nav-links .btn-primary {
+    background-color: var(--color-primary-btn);
+    /* Salmon */
+    color: var(--color-white);
+    border: 2px solid transparent;
+    /* Reset border */
+    border-radius: 0px;
+    font-weight: 700;
+}
+
+.nav-links .btn-primary:hover {
+    background-color: var(--color-text-primary);
+    /* Dark Blue */
+    color: var(--color-white);
+    /* FORCE text to stay white, overriding .nav-links a:hover */
+    border-color: transparent;
+}
+
 .btn-secondary {
     background-color: transparent;
     color: var(--color-text-primary);
     border: 2px solid var(--color-text-primary);
-    /* Make it distinct like Audacy's outlines */
+    border-radius: 0px;
+    /* Square */
 }
 
 .btn-secondary:hover {
@@ -189,6 +222,7 @@ header.scrolled {
 
 .nav-links a:hover {
     color: var(--color-primary-btn);
+    /* Salmon hover matching Audacy */
 }
 
 /* Hero Section */
@@ -206,27 +240,23 @@ header.scrolled {
 }
 
 .hero-text h1 {
-    font-size: 3rem;
-    /* Reduced from 4rem */
+    font-size: 2.2rem;
+    /* ~35px */
     color: var(--color-text-primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
-.hero-text p {
-    font-size: 1.25rem;
-    margin-bottom: 2.5rem;
-    max-width: 90%;
-    font-family: var(--font-heading);
-    /* Same as headline */
+.hero-light {
     font-weight: 400;
-    /* Not bold */
+    /* Regular weight for the description part */
+    font-family: var(--font-heading);
 }
 
-.hero-btns {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
+/* Removed obsolete .hero-desc rules */
+
+/* Removed .hero-desc strong rule as requested */
 
 .hero-visual {
     position: relative;
