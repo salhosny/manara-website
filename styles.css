@@ -227,7 +227,8 @@ header.scrolled {
 
 /* Hero Section */
 .hero {
-    background-color: var(--bg-pink-dark);
+    background-color: var(--bg-white);
+    /* Changed from pink-dark to white as requested */
     padding: 6rem 0;
     overflow: hidden;
 }
