@@ -267,26 +267,30 @@ header.scrolled {
     position: relative;
     /* Simulate the playful line art / frame style */
     /* Removed min-height 800px to overlap correctly with content flow */
+    width: 600px;
+    height: 600px;
+    /* Increased size */
+    background-color: var(--bg-white);
+    /* Changed to white as requested */
+    position: relative;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    /* Align to top to match text */
-    padding-top: 10px;
-    /* Slight offset if needed */
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--color-text-secondary);
+    /* box-shadow: 20px 20px 0px rgba(10, 51, 164, 0.1); */
+    /* Audacy style shadow */
+    box-shadow: 20px 20px 0px #FBE3DB;
+    /* Solid peach shadow */
+    border: 2px solid var(--color-text-primary);
+    /* Border matching title text */
 }
 
 .hero-shape-bg {
     width: 100%;
-    max-width: 500px;
-    /* Square width */
-    height: 500px;
-    /* Square height */
-    background: var(--bg-white);
-    border: 1px solid var(--color-border-gray);
-    border-radius: 0px;
+    height: 100%;
     position: relative;
-    box-shadow: 20px 20px 0px #FBE3DB;
-    /* Solid peach shadow restored */
+    /* Ensure content inside fills this */
 }
 
 /* Solid peach offset block */
@@ -395,7 +399,8 @@ header.scrolled {
     border: none;
     padding: 6rem 2rem;
     /* Consistent padding for all columns */
-    text-align: left;
+    text-align: center;
+    /* Centered text as requested */
     transition: all 0.3s ease;
     cursor: auto;
     /* Static feel per Audacy */
