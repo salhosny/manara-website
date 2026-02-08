@@ -136,80 +136,103 @@
         </div>
     </section>
 
-    <!-- Recent Projects Section (Refactored) -->
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+        <div class="container">
+            <svg viewBox="0 0 400 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,15 C50,0 100,30 150,15 C200,0 250,30 300,15 C350,0 400,30 400,15" fill="none"
+                    stroke="var(--color-border-gray)" stroke-width="1.5" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- Recent Projects Section -->
     <section id="portfolio" class="section portfolio">
         <div class="container">
-            <!-- Container removed for grid to be full width, but kept if we need other content -->
+            <div class="text-center">
+                <h2 class="section-title">Recent Projects</h2>
+            </div>
         </div>
 
-        <div class="portfolio-grid">
-            <!-- Column 1 -->
-            <div class="project-col">
-                <div class="project-content-wrapper">
-                    <h3>Pharmaceutical Industry</h3>
-                    <div class="project-visual">
-                        <div class="placeholder-icon">💊</div>
+        <div class="container">
+            <div class="portfolio-cards">
+                <!-- Column 1 -->
+                <div class="project-col">
+                    <div class="project-content-wrapper">
+                        <h3>Pharmaceutical</h3>
+                        <div class="project-visual">
+                            <div class="placeholder-icon">💊</div>
+                        </div>
+                        <p class="project-desc">Developed compliance and interactive training modules for a leading
+                            pharmaceutical company to ensure regulatory standards.</p>
                     </div>
-                    <p class="project-desc">Developed compliance and interactive training modules for a leading
-                        pharmaceutical company to ensure regulatory standards.</p>
                 </div>
-            </div>
 
-            <!-- Column 2 -->
-            <div class="project-col">
-                <div class="project-content-wrapper">
-                    <h3>Higher Education</h3>
-                    <div class="project-visual">
-                        <div class="placeholder-icon">🎓</div>
+                <!-- Column 2 -->
+                <div class="project-col">
+                    <div class="project-content-wrapper">
+                        <h3>Higher Education</h3>
+                        <div class="project-visual">
+                            <div class="placeholder-icon">🎓</div>
+                        </div>
+                        <p class="project-desc">Redesigned core curriculum courses for a major university's online
+                            program,
+                            focusing on student engagement and retention.</p>
                     </div>
-                    <p class="project-desc">Redesigned core curriculum courses for a major university's online program,
-                        focusing on student engagement and retention.</p>
                 </div>
-            </div>
 
-            <!-- Column 3 -->
-            <div class="project-col">
-                <div class="project-content-wrapper">
-                    <h3>Construction Industry</h3>
-                    <div class="project-visual">
-                        <div class="placeholder-icon">🏗️</div>
+                <!-- Column 3 -->
+                <div class="project-col">
+                    <div class="project-content-wrapper">
+                        <h3>Construction</h3>
+                        <div class="project-visual">
+                            <div class="placeholder-icon">🏗️</div>
+                        </div>
+                        <p class="project-desc">Implemented safety training and certification tracking systems for a
+                            large-scale construction workforce.</p>
                     </div>
-                    <p class="project-desc">Implemented safety training and certification tracking systems for a
-                        large-scale construction workforce.</p>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="container">
-            <div class="text-center" style="margin-bottom: 3rem;">
-                <h2 class="section-title">Get In Touch</h2>
-                <p>Ready to start your project? Send us a message.</p>
-            </div>
+            <div class="contact-layout">
+                <!-- Left side: Title, description, and placeholder image -->
+                <div class="contact-info">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p>Ready to start your project? Send us a message.</p>
+                    <div class="contact-visual">
+                        <div class="placeholder-icon">📧</div>
+                    </div>
+                </div>
 
-            <div class="contact-container">
-                <form>
-                    <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" id="firstName" class="form-control" placeholder="Jane">
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" id="lastName" class="form-control" placeholder="Doe">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" class="form-control" placeholder="jane@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" class="form-control"
-                            placeholder="Tell us about your project..."></textarea>
-                    </div>
-                    <button type="button" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                </form>
+                <!-- Right side: Form -->
+                <div class="contact-container">
+                    <form>
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" class="form-control" placeholder="Jane">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" class="form-control" placeholder="Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="jane@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control"
+                                placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
 
