@@ -3,10 +3,19 @@
  * Colors & Typography
  */
 
+/* Self-hosted Outfit font */
+@font-face {
+    font-family: 'Outfit';
+    src: url('fonts/Outfit.woff2') format('woff2');
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     /* Fonts */
     --font-heading: 'Georgia', serif;
-    --font-body: 'Gilroy', Arial, Helvetica, sans-serif;
+    --font-body: 'Outfit', 'Gilroy', Arial, Helvetica, sans-serif;
 
     /* Text Colors */
     --color-text-primary: #090335;
@@ -96,6 +105,7 @@ img {
 .section {
     padding: 5rem 0;
     position: relative;
+    scroll-margin-top: 100px; /* Offset for sticky header */
 }
 
 .text-center {
@@ -171,6 +181,22 @@ img {
 .btn-secondary:hover {
     background-color: var(--color-text-primary);
     color: var(--color-white);
+}
+
+/* Hero buttons container */
+.hero-btns {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+/* Handwritten signature in hero */
+.manara-signature {
+    height: 28px;
+    width: auto;
+    flex-shrink: 0;
+    transform: skewX(-8deg);
 }
 
 /* Decoration Shapes */

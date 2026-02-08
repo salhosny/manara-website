@@ -7,11 +7,6 @@
   <title>Manara | Who We Are</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Small override defaults from index.html if needed in future */
-    :root {
-      --font-body: 'Outfit', 'Gilroy', Arial, sans-serif;
-    }
-
     .about-hero {
       background-color: var(--bg-white);
       padding: 8rem 0 4rem;
@@ -47,17 +42,17 @@
 
   <!-- Header -->
   <header>
-    <div class="container nav-container">
-      <div class="logo"><a href="index.html" style="color: inherit;">Manara</a></div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html#services">What We Do</a></li>
-          <li><a href="about.html" class="active" style="color: var(--color-primary-btn);">Who We Are</a></li>
-          <li><a href="index.html#portfolio">Recent Projects</a></li>
-          <li><a href="index.html#contact" class="btn btn-primary">Contact Us</a></li>
-        </ul>
-      </nav>
-    </div>
+      <div class="container nav-container">
+          <div class="logo"><a href="index.html">Manara</a></div>
+          <nav>
+              <ul class="nav-links">
+                  <li><a href="index.html#services">What We Do</a></li>
+                  <li><a href="about.html">Who We Are</a></li>
+                  <li><a href="index.html#portfolio">Recent Projects</a></li>
+                  <li><a href="index.html#contact" class="btn btn-primary">Contact Us</a></li>
+              </ul>
+          </nav>
+      </div>
   </header>
 
   <!-- Main Content -->
@@ -120,34 +115,45 @@
 
   <!-- Footer -->
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-col">
-          <div class="logo" style="margin-bottom: 1rem; color: #fff;">Manara</div>
-          <p>Illuminating minds through design.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="mailto:info@manaralearn.com">info@manaralearn.com</a></li>
-            <li>Toronto, ON</li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Links</h4>
-          <ul>
-            <li><a href="index.html#services">Services</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="index.html#portfolio">Portfolio</a></li>
-          </ul>
-        </div>
+      <div class="container">
+          <div class="footer-content">
+              <div class="footer-col">
+                  <div class="logo">Manara</div>
+                  <p>Illuminating minds through design.</p>
+              </div>
+              <div class="footer-col">
+                  <h4>Contact</h4>
+                  <ul>
+                      <li><a href="mailto:info@manaralearn.com">info@manaralearn.com</a></li>
+                      <li>Toronto, ON</li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4>Links</h4>
+                  <ul>
+                      <li><a href="index.html#services">Services</a></li>
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="index.html#portfolio">Portfolio</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="copyright">
+              &copy; 2024 Manara Learn. All rights reserved.
+          </div>
       </div>
-      <div class="copyright">
-        &copy; 2024 Manara Learn. All rights reserved.
-      </div>
-    </div>
   </footer>
 
+  <!-- Scroll Script for Navbar -->
+  <script>
+      window.addEventListener('scroll', function () {
+          const header = document.querySelector('header');
+          if (window.scrollY > 50) {
+              header.classList.add('scrolled');
+          } else {
+              header.classList.remove('scrolled');
+          }
+      });
+  </script>
 </body>
 
 </html>
