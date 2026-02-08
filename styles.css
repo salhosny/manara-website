@@ -662,25 +662,31 @@ textarea.form-control {
 footer {
     background-color: var(--color-text-primary);
     color: var(--color-white);
-    padding: 4rem 0 2rem;
+    padding: 2rem 0 1rem;
+    /* Reduced padding */
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 3rem;
-    margin-bottom: 3rem;
+    gap: 2rem;
+    /* Reduced gap */
+    margin-bottom: 1.5rem;
+    /* Reduced margin */
 }
 
 .footer-col h4 {
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
-    color: var(--accent-yellow);
-    /* Pop of color */
+    font-size: 1.1rem;
+    /* Slightly smaller */
+    margin-bottom: 1rem;
+    /* Reduced margin */
+    color: var(--color-white);
+    /* Changed from yellow to white */
 }
 
 .footer-col ul li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
+    /* Reduced spacing */
 }
 
 .footer-col a {
@@ -693,9 +699,10 @@ footer {
 
 .copyright {
     text-align: center;
-    padding-top: 2rem;
+    padding-top: 1rem;
+    /* Reduced padding */
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.6);
 }
 
