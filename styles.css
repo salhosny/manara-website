@@ -312,38 +312,44 @@ header.scrolled {
 
 .services-grid {
     display: grid;
-    /* 4 columns for desktop as requested */
     grid-template-columns: repeat(4, 1fr);
     gap: 0;
-    /* Remove gap for borders to touch */
-    border-top: 1px solid var(--color-border-gray);
-    border-bottom: 1px solid var(--color-border-gray);
 }
 
 .service-card {
     background: transparent;
-    /* Removed white bg */
-    padding: 2rem;
+    padding: 4rem 1.5rem;
+    /* Increased vertical padding for taller cards */
     border-radius: 0px;
-    /* Square corners */
-    text-align: left;
-    /* transition: transform 0.3s ease; Removed hover lift */
+    text-align: center;
+    /* Center titles and text */
     display: flex;
     flex-direction: column;
     height: 100%;
-    /* Updated for divider layout */
     background: transparent;
     border: none;
     border-radius: 0;
     box-shadow: none;
-    border-right: 1px solid var(--color-border-gray);
-    padding: 2rem 1.5rem;
-    /* Adjusted padding */
+    position: relative;
+    /* For pseudo-element positioning */
 }
 
-/* Remove border from last item on desktop */
-.service-card:last-child {
-    border-right: none;
+/* Shorter vertical line between cards using pseudo-element */
+.service-card::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 25%;
+    /* Start 25% from top */
+    height: 50%;
+    /* 50% of card height */
+    width: 1px;
+    background-color: var(--color-border-gray);
+}
+
+/* Remove line from last item on desktop */
+.service-card:last-child::after {
+    display: none;
 }
 
 /* Wrapper to ensure flex centering doesn't stretch the item */
@@ -351,16 +357,17 @@ header.scrolled {
     width: 100%;
     display: flex;
     justify-content: center;
-    /* Center the square horizontally in the card */
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+    /* Increased spacing below image */
 }
 
 /* Fixed Dimensions for Square */
 .service-visual {
-    width: 80px !important;
-    height: 80px !important;
-    min-width: 80px !important;
-    min-height: 80px !important;
+    width: 120px !important;
+    /* Larger placeholder */
+    height: 120px !important;
+    min-width: 120px !important;
+    min-height: 120px !important;
     flex-shrink: 0;
 
     background-color: var(--bg-white) !important;
@@ -378,7 +385,8 @@ header.scrolled {
 /* Ensure placeholder icon is centered and visible */
 .placeholder-icon {
     display: block !important;
-    font-size: 2.5rem !important;
+    font-size: 3.5rem !important;
+    /* Larger icon for bigger placeholder */
     line-height: 1 !important;
     margin: 0 !important;
     padding: 0 !important;
