@@ -382,9 +382,10 @@ header.scrolled {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* Force 3 equal columns regardless of padding/content */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
-    align-items: start;
+    /* align-items: start; REMOVED to allow columns to stretch full height (fixing border issue) */
     border-top: 1px solid var(--color-border-gray);
     border-bottom: 1px solid var(--color-border-gray);
 }
@@ -392,8 +393,8 @@ header.scrolled {
 .project-col {
     /* Removed border, making it clean columns like Audacy */
     border: none;
-    padding: 6rem 4rem;
-    /* Increased padding for taller/wider feel */
+    padding: 6rem 2rem;
+    /* Consistent padding for all columns */
     text-align: left;
     transition: all 0.3s ease;
     cursor: auto;
@@ -402,10 +403,73 @@ header.scrolled {
     border-right: 1px solid var(--color-border-gray);
     display: flex;
     flex-direction: column;
+    /* Ensure content stretches to fill height if needed, but we used inner wrapper */
 }
 
 .project-col:last-child {
     border-right: none;
+}
+
+.project-col:first-child {
+    /* No special padding needed if we use inner wrapper */
+}
+
+/* Inner content wrapper to align text with container */
+.project-content-wrapper {
+    max-width: 350px;
+    /* Approx 1200 / 3 minus gaps */
+    width: 100%;
+}
+
+/* Align first column content to the right of its box (towards center) */
+.project-col:first-child .project-content-wrapper {
+    margin-left: auto;
+    margin-right: 0;
+    /* Optional: add some padding if it hits the edge? */
+}
+
+/* Align last column content to the left of its box (towards center) */
+.project-col:last-child .project-content-wrapper {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Middle column content centered */
+.project-col:nth-child(2) .project-content-wrapper {
+    margin: 0 auto;
+}
+
+
+/* Tablet/Mobile Responsiveness */
+@media (max-width: 992px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-col {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border-gray);
+        padding: 4rem 2rem;
+        /* Reset padding on mobile */
+    }
+
+    .project-col:last-child {
+        border-bottom: none;
+        padding-right: 2rem;
+        /* Reset padding */
+    }
+
+    .project-col:first-child {
+        padding-left: 2rem;
+        /* Reset padding */
+    }
+
+    .project-content-wrapper {
+        max-width: 100%;
+        /* Full width on mobile */
+        margin: 0 !important;
+        /* Reset margins */
+    }
 }
 
 .project-col:hover {
