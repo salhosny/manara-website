@@ -392,7 +392,8 @@ header.scrolled {
 .project-col {
     /* Removed border, making it clean columns like Audacy */
     border: none;
-    padding: 2rem;
+    padding: 6rem 4rem;
+    /* Increased padding for taller/wider feel */
     text-align: left;
     transition: all 0.3s ease;
     cursor: auto;
