@@ -304,15 +304,7 @@ header.scrolled {
     display: inline-block;
 }
 
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60%;
-    height: 4px;
-    background-color: var(--accent-yellow);
-    margin: 0.5rem auto 0;
-    border-radius: 2px;
-}
+
 
 .services-grid {
     display: grid;
