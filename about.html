@@ -13,18 +13,13 @@
     }
 
     .about-hero {
-      background-color: var(--bg-blue-light);
+      background-color: var(--bg-white);
       padding: 8rem 0 4rem;
       text-align: center;
     }
 
     .about-section {
       padding: 5rem 0;
-      border-bottom: 1px solid var(--color-border-gray);
-    }
-
-    .about-section:last-child {
-      border-bottom: none;
     }
 
     .content-block {
@@ -35,7 +30,8 @@
     .content-block h2 {
       font-size: 2.25rem;
       margin-bottom: 1.5rem;
-      color: var(--color-text-secondary);
+      color: var(--color-text-primary);
+      /* Dark Navy */
     }
 
     .content-block p {
@@ -77,10 +73,9 @@
     </section>
 
     <!-- Section 1: We Know Our Craft -->
-    <section class="about-section">
+    <section class="about-section" style="background-color: var(--bg-blue-light);">
       <div class="container content-block">
         <h2>We Know Our Craft</h2>
-        <div style="width: 60px; height: 5px; background: var(--accent-orange); margin-bottom: 2rem;"></div>
         <p>We understand the unique challenges and opportunities that educational institutions face today as they
           establish themselves in the online learning space.</p>
         <p>Our consultants bring years of experience in online learning, ensuring that every project we undertake is
@@ -88,12 +83,10 @@
           develop learning solutions that are not only effective but also engaging and accessible to all learners.</p>
       </div>
     </section>
-
     <!-- Section 2: From Plan to Perfection -->
-    <section class="about-section" style="background-color: var(--bg-pink-light);">
+    <section class="about-section">
       <div class="container content-block">
         <h2>From Plan to Perfection</h2>
-        <div style="width: 60px; height: 5px; background: var(--color-secondary-blue); margin-bottom: 2rem;"></div>
         <p>Our expertise extends beyond online course development to include comprehensive project management. We
           recognize that delivering high-quality educational solutions requires meticulous planning, coordination, and
           execution.</p>
@@ -101,6 +94,16 @@
           time, within scope and budget, and to the highest standards of quality.</p>
       </div>
     </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+      <div class="container">
+        <svg viewBox="0 0 400 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,15 C50,0 100,30 150,15 C200,0 250,30 300,15 C350,0 400,30 400,15" fill="none"
+            stroke="var(--color-border-gray)" stroke-width="1.5" />
+        </svg>
+      </div>
+    </div>
 
     <!-- Section 3: Here to Help -->
     <section class="about-section">
