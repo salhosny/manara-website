@@ -691,13 +691,31 @@ footer {
     /* Reduced padding */
 }
 
+footer .logo {
+    color: var(--color-white);
+}
+
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    /* Reduced gap */
+    grid-template-columns: 1fr auto auto;
+    gap: 4rem;
     margin-bottom: 1.5rem;
-    /* Reduced margin */
+    align-items: start;
+}
+
+.footer-col:first-child {
+    text-align: left;
+}
+
+.footer-col:nth-child(2),
+.footer-col:nth-child(3) {
+    text-align: right;
+    padding-top: 0.5rem;
+}
+
+.footer-col:nth-child(2) ul,
+.footer-col:nth-child(3) ul {
+    text-align: right;
 }
 
 .footer-col h4 {
