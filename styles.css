@@ -294,7 +294,7 @@ header.scrolled {
 
 /* Services Section */
 .services {
-    background-color: var(--bg-pink-light);
+    background-color: var(--bg-white);
 }
 
 .section-title {
@@ -355,7 +355,7 @@ header.scrolled {
 
 /* Commitment Section */
 .commitment {
-    background-color: var(--bg-white);
+    background-color: var(--bg-pink-light);
 }
 
 .commitment-content {
