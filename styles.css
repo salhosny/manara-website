@@ -312,49 +312,107 @@ header.scrolled {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    /* 4 columns for desktop as requested */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    /* Remove gap for borders to touch */
+    border-top: 1px solid var(--color-border-gray);
+    border-bottom: 1px solid var(--color-border-gray);
 }
 
 .service-card {
-    background: var(--bg-white);
+    background: transparent;
+    /* Removed white bg */
     padding: 2rem;
     border-radius: 0px;
     /* Square corners */
     text-align: left;
-    border: 1px solid var(--color-border-gray);
     /* transition: transform 0.3s ease; Removed hover lift */
     display: flex;
     flex-direction: column;
     height: 100%;
+    /* Updated for divider layout */
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    border-right: 1px solid var(--color-border-gray);
+    padding: 2rem 1.5rem;
+    /* Adjusted padding */
 }
 
-.service-visual {
+/* Remove border from last item on desktop */
+.service-card:last-child {
+    border-right: none;
+}
+
+/* Wrapper to ensure flex centering doesn't stretch the item */
+.service-visual-wrapper {
     width: 100%;
-    height: 180px;
-    background-color: var(--bg-white) !important;
-    /* Force uniform background */
-    border: 1px solid var(--color-border-gray);
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* Center the square horizontally in the card */
     margin-bottom: 1.5rem;
-    font-size: 3rem;
-    /* Icon size */
-    position: relative;
-    /* Ensure it stays in flow */
 }
 
-/* Ensure placeholder icon is centered */
+/* Fixed Dimensions for Square */
+.service-visual {
+    width: 80px !important;
+    height: 80px !important;
+    min-width: 80px !important;
+    min-height: 80px !important;
+    flex-shrink: 0;
+
+    background-color: var(--bg-white) !important;
+    border-radius: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+
+    /* Centering content inside the square */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
+    /* Reset margin, controlled by wrapper */
+}
+
+/* Ensure placeholder icon is centered and visible */
 .placeholder-icon {
-    display: block;
-    line-height: 1;
+    display: block !important;
+    font-size: 2.5rem !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    position: static !important;
+    /* Override conflicting absolute positioning */
+    transform: none !important;
+    /* Override conflicting transform */
 }
 
 .service-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     font-family: var(--font-heading);
+    margin-top: auto;
+    /* Push down if needed */
+}
+
+/* Services Responsive / Mobile */
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border-gray);
+        padding: 3rem 1rem;
+    }
+
+    .service-card:last-child {
+        border-bottom: none;
+    }
 }
 
 /* Commitment Section */
