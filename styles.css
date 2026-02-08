@@ -246,8 +246,12 @@ header.scrolled {
     color: var(--color-text-primary);
     margin-bottom: 2rem;
     font-weight: 700;
+    margin-bottom: 2rem;
+    font-weight: 700;
     line-height: 1.3;
 }
+
+
 
 .hero-light {
     font-weight: 400;
@@ -262,7 +266,8 @@ header.scrolled {
 .hero-visual {
     position: relative;
     /* Simulate the playful line art / frame style */
-    min-height: 400px;
+    /* Simulate the playful line art / frame style */
+    min-height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -272,15 +277,15 @@ header.scrolled {
     width: 100%;
     height: 100%;
     background: var(--bg-white);
-    border: 3px solid var(--color-text-primary);
-    border-radius: 12px;
+    border: 1px solid var(--color-border-gray);
+    border-radius: 0px;
     position: relative;
     box-shadow: 10px 10px 0px var(--accent-orange);
 }
 
 /* Services Section */
 .services {
-    background-color: var(--bg-blue-light);
+    background-color: var(--bg-pink-light);
 }
 
 .section-title {
@@ -309,8 +314,8 @@ header.scrolled {
 .service-card {
     background: var(--bg-white);
     padding: 2.5rem;
-    border-radius: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 0px;
+    border: 1px solid var(--color-border-gray);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -328,7 +333,7 @@ header.scrolled {
 
 /* Commitment Section */
 .commitment {
-    background-color: var(--bg-yellow-pink);
+    background-color: var(--bg-white);
 }
 
 .commitment-content {
@@ -355,36 +360,41 @@ header.scrolled {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-    /* Increased gap for column feel */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
     align-items: start;
+    border-top: 1px solid var(--color-border-gray);
+    border-bottom: 1px solid var(--color-border-gray);
 }
 
 .project-col {
     /* Removed border, making it clean columns like Audacy */
     border: none;
-    padding: 0;
+    padding: 2rem;
     text-align: left;
     transition: all 0.3s ease;
-    cursor: pointer;
+    cursor: auto;
+    /* Static feel per Audacy */
     background: transparent;
+    border-right: 1px solid var(--color-border-gray);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-col:last-child {
+    border-right: none;
 }
 
 .project-col:hover {
-    transform: translateY(-5px);
-}
-
-.project-col:hover h3 {
-    color: var(--color-primary-btn);
+    transform: none;
 }
 
 .project-col h3 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     margin-bottom: 1.5rem;
     font-family: var(--font-heading);
-    min-height: 4.5rem;
-    /* Align titles (accommodates 2 lines) */
+    order: -1;
+    /* Top */
 }
 
 .project-visual {
@@ -392,14 +402,17 @@ header.scrolled {
     height: 200px;
     background-color: var(--bg-pink-dark);
     margin-bottom: 2rem;
-    border-radius: 12px;
+    border-radius: 0px;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease;
+    border: 1px solid var(--color-border-gray);
+    order: 0;
+    /* Middle */
 }
 
 .project-col:hover .project-visual {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
 }
 
 /* Pseudo-placeholder illustration helper */
@@ -416,6 +429,8 @@ header.scrolled {
     font-size: 1.1rem;
     color: var(--color-text-primary);
     line-height: 1.7;
+    order: 1;
+    /* Bottom */
 }
 
 /* Contact Section */
