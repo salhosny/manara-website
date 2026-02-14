@@ -24,11 +24,9 @@
     /* Darker Neon Blue */
     --color-white: #FFFFFF;
 
-    /* Button / Action Colors */
-    --color-primary-btn: #FE7268;
-    /* Coral/Salmon */
-    --color-primary-btn-hover: #FFB0A1;
-    /* Pink/Orange large hover */
+    /* Button / Action Colors — Crimson & Terracotta */
+    --color-primary-btn: #902923;
+    --color-primary-btn-hover: #B84040;
 
     /* Borders */
     --color-border-highlight: #FF0000;
@@ -38,7 +36,7 @@
 
     /* Backgrounds */
     --bg-white: #FFFFFF;
-    --bg-pink-light: #FFF4F2;
+    --bg-pink-light: #FAF0ED;
     --bg-pink-dark: #FFE8E2;
     /* Hero Background */
     --bg-blue-light: #E3F3FA;
@@ -48,13 +46,13 @@
     --bg-blue-dark: #8A9DE9;
 
     /* Accents */
-    --accent-yellow: #FFDC00;
+    --accent-yellow: #E57A44;
     --accent-blue: #9FD7ED;
     --accent-orange: #FF9239;
 
     /* Theme-dependent derived values */
-    --shadow-accent: #FBE3DB;
-    --focus-ring: rgba(254, 114, 104, 0.2);
+    --shadow-accent: #F0D6C8;
+    --focus-ring: rgba(144, 41, 35, 0.2);
 }
 
 /* ========================================
@@ -63,14 +61,14 @@
    Only accent / action / background tones change.
    ======================================== */
 
-/* Crimson & Terracotta — warm academic authority (from coolors.co) */
-[data-theme="crimson"] {
-    --color-primary-btn: #902923;
-    --color-primary-btn-hover: #B84040;
-    --bg-pink-light: #FAF0ED;
-    --accent-yellow: #E57A44;
-    --shadow-accent: #F0D6C8;
-    --focus-ring: rgba(144, 41, 35, 0.2);
+/* Coral — playful, warm, energetic (original theme) */
+[data-theme="coral"] {
+    --color-primary-btn: #FE7268;
+    --color-primary-btn-hover: #FFB0A1;
+    --bg-pink-light: #FFF4F2;
+    --accent-yellow: #FFDC00;
+    --shadow-accent: #FBE3DB;
+    --focus-ring: rgba(254, 114, 104, 0.2);
 }
 
 /* Evergreen — scholarly, natural, wise */
