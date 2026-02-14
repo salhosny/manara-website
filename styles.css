@@ -51,6 +51,66 @@
     --accent-yellow: #FFDC00;
     --accent-blue: #9FD7ED;
     --accent-orange: #FF9239;
+
+    /* Theme-dependent derived values */
+    --shadow-accent: #FBE3DB;
+    --focus-ring: rgba(254, 114, 104, 0.2);
+}
+
+/* ========================================
+   THEME PALETTES
+   All themes keep navy (#090335) for text & footer.
+   Only accent / action / background tones change.
+   ======================================== */
+
+/* Crimson & Terracotta — warm academic authority (from coolors.co) */
+[data-theme="crimson"] {
+    --color-primary-btn: #902923;
+    --color-primary-btn-hover: #B84040;
+    --bg-pink-light: #FAF0ED;
+    --accent-yellow: #E57A44;
+    --shadow-accent: #F0D6C8;
+    --focus-ring: rgba(144, 41, 35, 0.2);
+}
+
+/* Evergreen — scholarly, natural, wise */
+[data-theme="evergreen"] {
+    --color-primary-btn: #2D6A4F;
+    --color-primary-btn-hover: #52B788;
+    --bg-pink-light: #F0F5F2;
+    --accent-yellow: #B7A14E;
+    --shadow-accent: #D4E0D8;
+    --focus-ring: rgba(45, 106, 79, 0.2);
+}
+
+/* Claret — refined, classic academia */
+[data-theme="claret"] {
+    --color-primary-btn: #722F37;
+    --color-primary-btn-hover: #9B4D56;
+    --bg-pink-light: #F7F2F3;
+    --accent-yellow: #C9A96E;
+    --shadow-accent: #E8D8DB;
+    --focus-ring: rgba(114, 47, 55, 0.2);
+}
+
+/* Slate & Amber — modern professional scholarship */
+[data-theme="slate"] {
+    --color-primary-btn: #4A5568;
+    --color-primary-btn-hover: #718096;
+    --bg-pink-light: #F7F8FA;
+    --accent-yellow: #D69E2E;
+    --shadow-accent: #E0E3E8;
+    --focus-ring: rgba(74, 85, 104, 0.2);
+}
+
+/* Teal & Copper — innovative education */
+[data-theme="teal"] {
+    --color-primary-btn: #285E61;
+    --color-primary-btn-hover: #3D8B8F;
+    --bg-pink-light: #F0F5F5;
+    --accent-yellow: #C07C4E;
+    --shadow-accent: #CCE3E4;
+    --focus-ring: rgba(40, 94, 97, 0.2);
 }
 
 /* Reset & Base Styles */
@@ -202,6 +262,16 @@ img {
     flex-shrink: 0;
 }
 
+/* Override inline SVG colors so the signature follows the active theme */
+.manara-signature path:first-child,
+.manara-signature path:last-child {
+    stroke: var(--color-primary-btn) !important;
+}
+
+.manara-signature path:nth-child(2) {
+    fill: var(--color-primary-btn) !important;
+}
+
 /* Decoration Shapes */
 .shape {
     position: absolute;
@@ -314,7 +384,7 @@ header.scrolled {
     color: var(--color-text-secondary);
     /* box-shadow: 20px 20px 0px rgba(10, 51, 164, 0.1); */
     /* Audacy style shadow */
-    box-shadow: 20px 20px 0px #FBE3DB;
+    box-shadow: 20px 20px 0px var(--shadow-accent);
     /* Solid peach shadow */
     border: 2px solid var(--color-text-primary);
     /* Border matching title text */
@@ -698,7 +768,7 @@ header.scrolled {
 .form-control:focus {
     outline: none;
     border-color: var(--color-primary-btn);
-    box-shadow: 0 0 0 3px rgba(254, 114, 104, 0.2);
+    box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
 textarea.form-control {
@@ -791,4 +861,100 @@ footer .logo {
     .hero-text p {
         margin: 0 auto 2rem;
     }
+}
+
+/* ========================================
+   THEME SWITCHER BANNER
+   Fixed bar at the bottom of the viewport
+   for quick palette comparison.
+   ======================================== */
+.theme-switcher {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: var(--color-text-primary);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0.65rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    font-family: var(--font-body);
+}
+
+.theme-switcher__label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.theme-switcher__options {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.theme-swatch {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    padding: 0;
+    outline: none;
+}
+
+.theme-swatch:hover {
+    transform: scale(1.15);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.theme-swatch.active {
+    border-color: #FFFFFF;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+    transform: scale(1.15);
+}
+
+.theme-swatch__color {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
+
+.theme-swatch__name {
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-text-primary);
+    color: var(--color-white);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}
+
+.theme-swatch:hover .theme-swatch__name,
+.theme-swatch.active .theme-swatch__name {
+    opacity: 1;
+}
+
+/* Add bottom padding to body so the fixed banner doesn't cover footer content */
+body {
+    padding-bottom: 56px;
 }
