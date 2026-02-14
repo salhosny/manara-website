@@ -60,6 +60,10 @@
     padding: 0;
 }
 
+html {
+    scrollbar-gutter: stable; /* Prevents layout shift when scrollbar appears/disappears between pages */
+}
+
 body {
     font-family: var(--font-body);
     color: var(--color-text-primary);
@@ -209,6 +213,10 @@ header {
     background-color: var(--bg-white);
     /* Always white */
     padding: 1.5rem 0;
+    min-height: 72px; /* Fixed height for consistent navbar across all pages */
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -225,6 +233,7 @@ header.scrolled {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .logo {
@@ -315,7 +324,14 @@ header.scrolled {
     width: 100%;
     height: 100%;
     position: relative;
-    /* Ensure content inside fills this */
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /* Solid peach offset block */
@@ -410,7 +426,7 @@ header.scrolled {
 
     background-color: var(--bg-white) !important;
     border-radius: 0px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: none;
 
     /* Centering content inside the square */
     display: flex !important;
@@ -418,6 +434,13 @@ header.scrolled {
     align-items: center !important;
     margin: 0 !important;
     /* Reset margin, controlled by wrapper */
+}
+
+/* Service section icons - sized to match placeholder dimensions */
+.service-visual .service-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* Ensure placeholder icon is centered and visible */
