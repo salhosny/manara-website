@@ -120,7 +120,7 @@
 
 html {
     scrollbar-gutter: stable; /* Prevents layout shift when scrollbar appears/disappears between pages */
-    background-color: var(--color-text-primary); /* Match footer so no white line at bottom */
+    background-color: var(--bg-white);
 }
 
 body {
@@ -128,6 +128,7 @@ body {
     color: var(--color-text-primary);
     line-height: 1.6;
     background-color: var(--bg-white);
+    min-height: 100vh;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -413,6 +414,7 @@ header.scrolled {
     color: var(--color-text-secondary);
     box-shadow: 20px 20px 0px var(--shadow-accent);
     border: 2px solid var(--color-text-primary);
+    overflow: hidden;
 }
 
 .hero-shape-bg {
@@ -757,6 +759,10 @@ header.scrolled {
     .contact-info {
         text-align: center;
     }
+
+    .contact-container {
+        padding: 1.5rem;
+    }
 }
 
 .form-group {
@@ -856,6 +862,36 @@ footer .logo {
     color: rgba(255, 255, 255, 0.6);
 }
 
+/* Footer responsive */
+@media (max-width: 600px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .footer-col:first-child {
+        grid-column: 1 / -1;   /* Logo row spans full width */
+    }
+
+    .footer-col:nth-child(2) {
+        text-align: left;
+        padding-top: 0;
+    }
+
+    .footer-col:nth-child(3) {
+        text-align: right;
+        padding-top: 0;
+    }
+
+    .footer-col:nth-child(2) ul {
+        text-align: left;
+    }
+
+    .footer-col:nth-child(3) ul {
+        text-align: right;
+    }
+}
+
 /* Responsive — Hero stacks before buttons would need to wrap */
 @media (max-width: 900px) {
     .hero-content {
@@ -920,6 +956,7 @@ footer .logo {
     /* Prevent horizontal scroll on mobile */
     html {
         scrollbar-gutter: auto;
+        overflow-x: hidden;    /* needed on html too for iOS Safari */
     }
 
     body {
