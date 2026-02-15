@@ -120,6 +120,7 @@
 
 html {
     scrollbar-gutter: stable; /* Prevents layout shift when scrollbar appears/disappears between pages */
+    background-color: var(--color-text-primary); /* Match footer so no white line at bottom */
 }
 
 body {
