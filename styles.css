@@ -250,7 +250,28 @@ img {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+}
+
+.hero-btns .btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* On very narrow screens, allow buttons to compress slightly */
+@media (max-width: 450px) {
+    .hero-btns {
+        gap: 0.4rem;
+    }
+
+    .hero-btns .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .manara-signature {
+        height: 24px;
+    }
 }
 
 /* Handwritten signature in hero */
@@ -330,9 +351,8 @@ header.scrolled {
 /* Hero Section */
 .hero {
     background-color: var(--bg-white);
-    /* Changed from pink-dark to white as requested */
     padding: 6rem 0;
-    overflow: hidden;
+    overflow-x: clip;
 }
 
 .hero-content {
@@ -340,6 +360,7 @@ header.scrolled {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    overflow: visible;
 }
 
 .hero-text h1 {
@@ -367,25 +388,17 @@ header.scrolled {
 
 .hero-visual {
     position: relative;
-    /* Simulate the playful line art / frame style */
-    /* Removed min-height 800px to overlap correctly with content flow */
-    width: 600px;
-    height: 600px;
-    /* Increased size */
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 1 / 1;
     background-color: var(--bg-white);
-    /* Changed to white as requested */
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
     color: var(--color-text-secondary);
-    /* box-shadow: 20px 20px 0px rgba(10, 51, 164, 0.1); */
-    /* Audacy style shadow */
     box-shadow: 20px 20px 0px var(--shadow-accent);
-    /* Solid peach shadow */
     border: 2px solid var(--color-text-primary);
-    /* Border matching title text */
 }
 
 .hero-shape-bg {
@@ -811,13 +824,8 @@ footer .logo {
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        /* simple hide for mobile MVP, or create hamburger if needed */
-    }
-
+/* Responsive — Hero stacks before buttons would need to wrap */
+@media (max-width: 900px) {
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -830,100 +838,20 @@ footer .logo {
     .hero-text p {
         margin: 0 auto 2rem;
     }
+
+    .hero-btns {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        margin: 0 auto;
+        max-width: 500px;
+    }
 }
 
-/* ========================================
-   THEME SWITCHER BANNER
-   Fixed bar at the bottom of the viewport
-   for quick palette comparison.
-   ======================================== */
-.theme-switcher {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    background: var(--color-text-primary);
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 0.65rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    font-family: var(--font-body);
-}
-
-.theme-switcher__label {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
-.theme-switcher__options {
-    display: flex;
-    gap: 0.6rem;
-    align-items: center;
-}
-
-.theme-swatch {
-    position: relative;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.25);
-    cursor: pointer;
-    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    padding: 0;
-    outline: none;
-}
-
-.theme-swatch:hover {
-    transform: scale(1.15);
-    border-color: rgba(255, 255, 255, 0.6);
-}
-
-.theme-swatch.active {
-    border-color: #FFFFFF;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
-    transform: scale(1.15);
-}
-
-.theme-swatch__color {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-}
-
-.theme-swatch__name {
-    position: absolute;
-    bottom: calc(100% + 6px);
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--color-text-primary);
-    color: var(--color-white);
-    font-size: 0.7rem;
-    font-weight: 600;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.15s ease;
-}
-
-.theme-swatch:hover .theme-swatch__name,
-.theme-swatch.active .theme-swatch__name {
-    opacity: 1;
-}
-
-/* Add bottom padding to body so the fixed banner doesn't cover footer content */
-body {
-    padding-bottom: 56px;
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* simple hide for mobile MVP, or create hamburger if needed */
+    }
 }

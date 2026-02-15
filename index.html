@@ -254,40 +254,8 @@
         </div>
     </footer>
 
-    <!-- Theme Switcher Banner -->
-    <div class="theme-switcher">
-        <span class="theme-switcher__label">Theme</span>
-        <div class="theme-switcher__options">
-            <button class="theme-swatch active" data-theme="" title="Crimson (Default)">
-                <span class="theme-swatch__color" style="background:#902923;"></span>
-                <span class="theme-swatch__name">Crimson</span>
-            </button>
-            <button class="theme-swatch" data-theme="coral" title="Coral">
-                <span class="theme-swatch__color" style="background:#FE7268;"></span>
-                <span class="theme-swatch__name">Coral</span>
-            </button>
-            <button class="theme-swatch" data-theme="evergreen" title="Evergreen">
-                <span class="theme-swatch__color" style="background:#2D6A4F;"></span>
-                <span class="theme-swatch__name">Evergreen</span>
-            </button>
-            <button class="theme-swatch" data-theme="claret" title="Claret">
-                <span class="theme-swatch__color" style="background:#722F37;"></span>
-                <span class="theme-swatch__name">Claret</span>
-            </button>
-            <button class="theme-swatch" data-theme="slate" title="Slate & Amber">
-                <span class="theme-swatch__color" style="background:#4A5568;"></span>
-                <span class="theme-swatch__name">Slate</span>
-            </button>
-            <button class="theme-swatch" data-theme="teal" title="Teal & Copper">
-                <span class="theme-swatch__color" style="background:#285E61;"></span>
-                <span class="theme-swatch__name">Teal</span>
-            </button>
-        </div>
-    </div>
-
-    <!-- Scroll Script for Navbar + Theme Switcher -->
+    <!-- Scroll Script for Navbar -->
     <script>
-        // Sticky header scroll effect
         window.addEventListener('scroll', function () {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
@@ -296,47 +264,6 @@
                 header.classList.remove('scrolled');
             }
         });
-
-        // Theme switcher logic
-        (function () {
-            var swatches = document.querySelectorAll('.theme-swatch');
-            var root = document.documentElement;
-
-            // Restore saved theme on load
-            var saved = localStorage.getItem('manara-theme') || '';
-            if (saved) {
-                root.setAttribute('data-theme', saved);
-            }
-            // Mark the correct swatch as active
-            swatches.forEach(function (s) {
-                if (s.getAttribute('data-theme') === saved) {
-                    s.classList.add('active');
-                } else {
-                    s.classList.remove('active');
-                }
-            });
-
-            // Handle clicks
-            swatches.forEach(function (swatch) {
-                swatch.addEventListener('click', function () {
-                    var theme = this.getAttribute('data-theme');
-
-                    // Update data-theme on <html>
-                    if (theme) {
-                        root.setAttribute('data-theme', theme);
-                    } else {
-                        root.removeAttribute('data-theme');
-                    }
-
-                    // Persist choice
-                    localStorage.setItem('manara-theme', theme);
-
-                    // Toggle active class
-                    swatches.forEach(function (s) { s.classList.remove('active'); });
-                    this.classList.add('active');
-                });
-            });
-        })();
     </script>
 </body>
 
