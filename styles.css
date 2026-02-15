@@ -677,19 +677,17 @@ header.scrolled {
     margin-bottom: 2rem;
 }
 
-/* Placeholder visual for contact */
+/* Contact visual */
 .contact-visual {
-    width: 200px;
-    height: 150px;
-    background-color: var(--bg-pink-light);
-    /* Match section background */
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
+    width: 100%;
+    max-width: 350px;
     margin: 0 auto;
-    /* Center the image */
+}
+
+.contact-image {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .contact-container {
