@@ -291,6 +291,19 @@ img {
     fill: var(--color-primary-btn) !important;
 }
 
+/* Flip the decorative curls beside the "m" on button hover */
+.manara-signature path:first-child,
+.manara-signature path:last-child {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.hero-btns:has(.btn:hover) .manara-signature path:first-child,
+.hero-btns:has(.btn:hover) .manara-signature path:last-child {
+    transform: scaleY(-1);
+}
+
 /* Decoration Shapes */
 .shape {
     position: absolute;
