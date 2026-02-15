@@ -44,6 +44,11 @@
   <header>
       <div class="container nav-container">
           <div class="logo"><a href="index.html">Manara</a></div>
+          <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+          </button>
           <nav>
               <ul class="nav-links">
                   <li><a href="index.html#services">What We Do</a></li>
@@ -152,6 +157,25 @@
           } else {
               header.classList.remove('scrolled');
           }
+      });
+
+      // Hamburger menu toggle
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+
+      hamburger.addEventListener('click', function () {
+          hamburger.classList.toggle('open');
+          navLinks.classList.toggle('open');
+          hamburger.setAttribute('aria-expanded', navLinks.classList.contains('open'));
+      });
+
+      // Close menu when a link is clicked
+      navLinks.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+              hamburger.classList.remove('open');
+              navLinks.classList.remove('open');
+              hamburger.setAttribute('aria-expanded', 'false');
+          });
       });
   </script>
 </body>
