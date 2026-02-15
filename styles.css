@@ -257,8 +257,6 @@ img {
 .hero-btns .btn {
     white-space: nowrap;
     flex-shrink: 0;
-    min-width: 150px;
-    text-align: center;
 }
 
 /* On very narrow screens, allow buttons to compress slightly */
@@ -402,15 +400,10 @@ header.scrolled {
 
 /* Removed .hero-desc strong rule as requested */
 
-.hero-visual-wrap {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-}
-
 .hero-visual {
     position: relative;
     width: 100%;
+    max-width: 600px;
     aspect-ratio: 1 / 1;
     background-color: var(--bg-white);
     display: flex;
@@ -420,7 +413,6 @@ header.scrolled {
     color: var(--color-text-secondary);
     box-shadow: 20px 20px 0px var(--shadow-accent);
     border: 2px solid var(--color-text-primary);
-    overflow: hidden;
 }
 
 .hero-shape-bg {
@@ -883,7 +875,7 @@ footer .logo {
         justify-content: center;
     }
 
-    .hero-visual-wrap {
+    .hero-visual {
         margin: 0 auto;
         max-width: min(500px, calc(100% - 40px));  /* leave room for box-shadow (20px) on each side */
     }
