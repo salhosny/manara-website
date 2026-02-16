@@ -626,14 +626,13 @@ header.scrolled {
 .project-visual {
     width: 100%;
     height: 200px;
-    background-color: var(--bg-white);
-    /* Changed from pink to white */
+    background-color: transparent;
     margin-bottom: 2rem;
     border-radius: 0px;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease;
-    border: 1px solid var(--color-border-gray);
+    border: none;
     order: 0;
     /* Middle */
 }
@@ -661,6 +660,15 @@ header.scrolled {
 .project-image.top-crop {
     object-position: top;
 }
+
+.pharma-image {
+    width: 85%;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    padding-top: 1rem;
+}
+
 
 .project-desc {
     font-size: 1.1rem;
@@ -704,8 +712,8 @@ header.scrolled {
 /* Two-column layout for contact */
 .contact-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 1.5rem;
     align-items: center;
     /* Vertically center with form */
 }
@@ -726,8 +734,8 @@ header.scrolled {
 
 /* Contact visual */
 .contact-visual {
-    width: 100%;
-    max-width: 350px;
+    width: 75%;
+    max-width: 75%;
     margin: 0 auto;
 }
 
