@@ -25,7 +25,7 @@
     --color-white: #FFFFFF;
 
     /* Button / Action Colors — Crimson & Terracotta */
-    --color-primary-btn: #FF6D00;
+    --color-primary-btn: #D83F00;
     --color-primary-btn-hover: #B84040;
 
     /* Borders */
@@ -48,7 +48,7 @@
     /* Accents */
     --accent-yellow: #E57A44;
     --accent-blue: #9FD7ED;
-    --accent-orange: #FF9239;
+    --accent-orange: #D83F00;
 
     /* Theme-dependent derived values */
     --shadow-accent: #F0D6C8;
