@@ -437,14 +437,20 @@ header.scrolled {
     height: 72%;
 }
 
-.bulb-streak {
-    animation: bulb-flow 9s linear infinite;
+.bulb-leader {
+    animation: bulb-flow 7.6s linear infinite;
+}
+
+.bulb-follower {
+    animation: bulb-flow 7.6s linear 0.47s infinite;
 }
 
 @keyframes bulb-flow {
-    0%     { stroke-dashoffset: 6; }
-    88.9%  { stroke-dashoffset: -106; }
-    100%   { stroke-dashoffset: -106; }
+    0%    { stroke-dashoffset: 2.8; }    /* bolt just before path start */
+    49.2% { stroke-dashoffset: -64.7; } /* head enters coil — slow down */
+    65.9% { stroke-dashoffset: -74.1; } /* tail exits coil — resume speed */
+    86.8% { stroke-dashoffset: -102.8; }/* tail cleared path */
+    100%  { stroke-dashoffset: -102.8; }/* pause before loop */
 }
 
 
