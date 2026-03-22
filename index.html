@@ -410,52 +410,34 @@
           document.getElementById('dev-pink-label').textContent = 'Active: ' + c;
         }
 
-        // --- Preset swatch clicks ---
-        document.querySelectorAll('.dev-swatch[data-navy]').forEach(function(el) {
-          el.addEventListener('click', function() {
-            applyNavy(el.dataset.navy);
-            document.querySelectorAll('.dev-swatch[data-navy]').forEach(function(s){ s.classList.remove('active'); });
-            el.classList.add('active');
-          });
-        });
-        document.querySelectorAll('.dev-swatch[data-brown]').forEach(function(el) {
-          el.addEventListener('click', function() {
-            applyBrown(el.dataset.brown);
-            document.querySelectorAll('.dev-swatch[data-brown]').forEach(function(s){ s.classList.remove('active'); });
-            el.classList.add('active');
-          });
-        });
-        document.querySelectorAll('.dev-swatch[data-pink]').forEach(function(el) {
-          el.addEventListener('click', function() {
-            applyPink(el.dataset.pink);
-            document.querySelectorAll('.dev-swatch[data-pink]').forEach(function(s){ s.classList.remove('active'); });
-            el.classList.add('active');
-          });
-        });
-
         // --- Fine-grain picker ---
         var fineTarget = 'navy';
         var fineInput = document.getElementById('dev-fine-input');
         var fineHex = document.getElementById('dev-fine-hex');
         var fineLabel = document.getElementById('dev-fine-target-label');
-        var targetMeta = {
-          navy:  { label: '→ Primary Navy',  initial: '#090335' },
-          brown: { label: '→ Secondary',      initial: '#902923' },
-          pink:  { label: '→ Pinkish BG',     initial: '#FAF0ED' }
+        var targetLabels = {
+          navy:  '→ Primary Navy',
+          brown: '→ Secondary',
+          pink:  '→ Pinkish BG'
         };
+        var activeColors = { navy: '#090335', brown: '#902923', pink: '#FAF0ED' };
+
+        function syncFine(target, hex) {
+          fineTarget = target;
+          activeColors[target] = hex;
+          fineInput.value = hex;
+          fineHex.textContent = hex.toUpperCase();
+          fineLabel.textContent = targetLabels[target];
+          document.querySelectorAll('.dev-fine-tab').forEach(function(t) {
+            var active = t.dataset.target === target;
+            t.style.background = active ? '#1B2A4A' : '#fff';
+            t.style.color = active ? '#fff' : '#333';
+            t.style.borderColor = active ? '#1B2A4A' : '#ccc';
+          });
+        }
 
         document.querySelectorAll('.dev-fine-tab').forEach(function(tab) {
-          tab.addEventListener('click', function() {
-            fineTarget = tab.dataset.target;
-            document.querySelectorAll('.dev-fine-tab').forEach(function(t) {
-              t.style.background = '#fff'; t.style.color = '#333'; t.style.borderColor = '#ccc';
-            });
-            tab.style.background = '#1B2A4A'; tab.style.color = '#fff'; tab.style.borderColor = '#1B2A4A';
-            var m = targetMeta[fineTarget];
-            fineInput.value = m.initial;
-            fineHex.textContent = m.initial.toUpperCase();
-            fineLabel.textContent = m.label;
-          });
+          tab.addEventListener('click', function() { syncFine(tab.dataset.target, activeColors[tab.dataset.target]); });
         });
 
         fineInput.addEventListener('input', function() {
@@ -464,6 +446,32 @@
           if (fineTarget === 'navy')  applyNavy(c);
           if (fineTarget === 'brown') applyBrown(c);
           if (fineTarget === 'pink')  applyPink(c);
+        });
+
+        // --- Preset swatch clicks ---
+        document.querySelectorAll('.dev-swatch[data-navy]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            var c = el.dataset.navy;
+            applyNavy(c); syncFine('navy', c);
+            document.querySelectorAll('.dev-swatch[data-navy]').forEach(function(s){ s.classList.remove('active'); });
+            el.classList.add('active');
+          });
+        });
+        document.querySelectorAll('.dev-swatch[data-brown]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            var c = el.dataset.brown;
+            applyBrown(c); syncFine('brown', c);
+            document.querySelectorAll('.dev-swatch[data-brown]').forEach(function(s){ s.classList.remove('active'); });
+            el.classList.add('active');
+          });
+        });
+        document.querySelectorAll('.dev-swatch[data-pink]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            var c = el.dataset.pink;
+            applyPink(c); syncFine('pink', c);
+            document.querySelectorAll('.dev-swatch[data-pink]').forEach(function(s){ s.classList.remove('active'); });
+            el.classList.add('active');
+          });
         });
       })();
     </script>
