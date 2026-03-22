@@ -438,12 +438,13 @@ header.scrolled {
 }
 
 .bulb-streak {
-    animation: bulb-flow 5s linear infinite;
+    animation: bulb-flow 9s linear infinite;
 }
 
 @keyframes bulb-flow {
-    from { stroke-dashoffset: 6; }
-    to   { stroke-dashoffset: -100; }
+    0%     { stroke-dashoffset: 6; }
+    88.9%  { stroke-dashoffset: -106; }
+    100%   { stroke-dashoffset: -106; }
 }
 
 
