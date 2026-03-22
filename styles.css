@@ -257,7 +257,8 @@ img {
 
 .hero-btns .btn {
     white-space: nowrap;
-    flex-shrink: 0;
+    flex: 1;
+    text-align: center;
 }
 
 /* On very narrow screens, allow buttons to compress slightly */
@@ -1043,6 +1044,18 @@ footer .logo {
     .nav-links li:last-child a {
         border-bottom: none;
         margin-top: 0.5rem;
+        display: inline-block;
+        width: auto;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+    .nav-links li:last-child {
+        border-top: none;
         text-align: center;
+    }
+
+    .nav-links li:nth-last-child(2) a {
+        border-bottom: none;
     }
 }
