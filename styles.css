@@ -437,7 +437,7 @@ header .hamburger span {
 .hero-visual {
     position: relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 315px;
     aspect-ratio: 1 / 1;
     background-color: var(--bg-white);
     display: flex;
@@ -466,8 +466,8 @@ header .hamburger span {
 
 /* Animated bulb SVG */
 .bulb-svg {
-    width: 72%;
-    height: 72%;
+    width: 54%;
+    height: 54%;
 }
 
 .bulb-leader {
@@ -977,7 +977,7 @@ footer .logo {
 
     .hero-visual {
         margin: 0 auto;
-        max-width: min(500px, calc(100% - 40px));  /* leave room for box-shadow (20px) on each side */
+        max-width: min(263px, calc(100% - 40px));  /* leave room for box-shadow (20px) on each side */
     }
 }
 
