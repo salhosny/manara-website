@@ -318,52 +318,53 @@ img {
 
 /* Header / Nav */
 header {
-    background-color: var(--bg-navy);
+    background-color: #E5DDD0;
     padding: 1.5rem 0;
-    min-height: 72px; /* Fixed height for consistent navbar across all pages */
+    min-height: 72px;
     display: flex;
     align-items: center;
     box-sizing: border-box;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid #D0C8BC;
     transition: border-bottom 0.3s ease;
 }
 
 header.scrolled {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid #C0B8AC;
 }
 
-/* Logo white on navy header */
+/* Logo navy on parchment header */
 header .logo,
 header .logo a {
-    color: var(--color-white);
+    color: #1B2E4B;
 }
 
-/* Nav links white on navy header */
+/* Nav links navy on parchment header */
 header .nav-links a {
-    color: rgba(255, 255, 255, 0.85);
+    color: #1B2E4B;
+    font-weight: 500;
 }
 
 header .nav-links a:hover {
-    color: var(--color-white);
+    color: #D4743A;
 }
 
-/* Contact Us button in nav — Burnt Sienna on navy */
+/* Contact Us button in nav — Burnt Sienna */
 header .nav-links .btn-primary {
-    background-color: var(--color-primary-btn);
-    color: var(--color-white);
+    background-color: #D4743A;
+    color: #FFFFFF;
 }
 
 header .nav-links .btn-primary:hover {
-    background-color: var(--color-white);
-    color: var(--bg-navy);
+    background-color: #1B2E4B;
+    color: #FFFFFF;
 }
 
-/* Hamburger bars white on navy */
+/* Hamburger bars navy on parchment */
 header .hamburger span {
-    background-color: var(--color-white);
+    background-color: #1B2E4B;
 }
 
 .nav-container {
