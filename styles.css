@@ -24,7 +24,7 @@
     --color-white: #FFFFFF;
 
     /* Button / Action Colors — Burnt Sienna (10% accent) */
-    --color-primary-btn: #D4743A;
+    --color-primary-btn: #B05520;
     --color-primary-btn-hover: #1B2E4B;
 
     /* Borders */
@@ -55,7 +55,7 @@
 
     /* Theme-dependent derived values */
     --shadow-accent: #E5DDD0;
-    --focus-ring: rgba(212, 116, 58, 0.2);
+    --focus-ring: rgba(176, 85, 32, 0.5);
 }
 
 /* ========================================
@@ -66,52 +66,52 @@
 
 /* Coral — playful, warm, energetic */
 [data-theme="coral"] {
-    --color-primary-btn: #D4743A;
+    --color-primary-btn: #B05520;
     --color-primary-btn-hover: #1B2E4B;
     --bg-pink-light: #E5DDD0;
     --accent-yellow: #D4743A;
     --shadow-accent: #E5DDD0;
-    --focus-ring: rgba(212, 116, 58, 0.2);
+    --focus-ring: rgba(176, 85, 32, 0.5);
 }
 
 /* Evergreen — scholarly, natural, wise */
 [data-theme="evergreen"] {
-    --color-primary-btn: #D4743A;
+    --color-primary-btn: #B05520;
     --color-primary-btn-hover: #1B2E4B;
     --bg-pink-light: #E5DDD0;
     --accent-yellow: #D4743A;
     --shadow-accent: #E5DDD0;
-    --focus-ring: rgba(212, 116, 58, 0.2);
+    --focus-ring: rgba(176, 85, 32, 0.5);
 }
 
 /* Claret — refined, classic academia */
 [data-theme="claret"] {
-    --color-primary-btn: #D4743A;
+    --color-primary-btn: #B05520;
     --color-primary-btn-hover: #1B2E4B;
     --bg-pink-light: #E5DDD0;
     --accent-yellow: #D4743A;
     --shadow-accent: #E5DDD0;
-    --focus-ring: rgba(212, 116, 58, 0.2);
+    --focus-ring: rgba(176, 85, 32, 0.5);
 }
 
 /* Slate & Amber — modern professional scholarship */
 [data-theme="slate"] {
-    --color-primary-btn: #D4743A;
+    --color-primary-btn: #B05520;
     --color-primary-btn-hover: #1B2E4B;
     --bg-pink-light: #E5DDD0;
     --accent-yellow: #D4743A;
     --shadow-accent: #E5DDD0;
-    --focus-ring: rgba(212, 116, 58, 0.2);
+    --focus-ring: rgba(176, 85, 32, 0.5);
 }
 
 /* Teal & Copper — innovative education */
 [data-theme="teal"] {
-    --color-primary-btn: #D4743A;
+    --color-primary-btn: #B05520;
     --color-primary-btn-hover: #1B2E4B;
     --bg-pink-light: #E5DDD0;
     --accent-yellow: #D4743A;
     --shadow-accent: #E5DDD0;
-    --focus-ring: rgba(212, 116, 58, 0.2);
+    --focus-ring: rgba(176, 85, 32, 0.5);
 }
 
 /* Reset & Base Styles */
@@ -160,6 +160,28 @@ ul {
 img {
     max-width: 100%;
     display: block;
+}
+
+/* Skip navigation link — hidden until focused by keyboard */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--bg-navy);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    z-index: 9999;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    transition: top 0.15s ease;
+}
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid var(--color-primary-btn);
+    outline-offset: 2px;
 }
 
 /* Utilities */
@@ -351,9 +373,9 @@ header .nav-links a:hover {
     color: #D4743A;
 }
 
-/* Contact Us button in nav — Burnt Sienna */
+/* Contact Us button in nav — darkened Sienna for WCAG AA contrast */
 header .nav-links .btn-primary {
-    background-color: #D4743A;
+    background-color: #B05520;
     color: #FFFFFF;
 }
 
@@ -504,7 +526,6 @@ header .hamburger span {
     font-size: 1.1rem;
     line-height: 1.7;
     color: var(--color-text-primary);
-    opacity: 0.7;
     max-width: 560px;
     margin: 0 auto;
 }
@@ -649,7 +670,6 @@ header .hamburger span {
     padding: 2rem;
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
 }
 
 /* Subtle hover effect */
@@ -851,7 +871,8 @@ header .hamburger span {
 }
 
 .form-control:focus {
-    outline: none;
+    outline: 2px solid var(--color-primary-btn);
+    outline-offset: 2px;
     border-color: var(--color-primary-btn);
     box-shadow: 0 0 0 3px var(--focus-ring);
 }
@@ -1090,5 +1111,13 @@ footer .logo {
 
     .nav-links li:nth-last-child(2) a {
         border-bottom: none;
+    }
+}
+
+/* Reduced motion — disable looping animations for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .bulb-leader,
+    .bulb-follower {
+        animation: none;
     }
 }
