@@ -1114,6 +1114,36 @@ footer .logo {
     }
 }
 
+/* Animation pause/play button */
+.anim-pause-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 2px solid #1B2E4B;
+    border-radius: 20px;
+    color: #1B2E4B;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 10;
+    line-height: 1;
+}
+.anim-pause-btn:focus-visible {
+    outline: 2px solid var(--color-primary-btn);
+    outline-offset: 2px;
+}
+.anim-pause-btn:hover {
+    background: #fff;
+}
+.hero-visual {
+    position: relative;
+}
+
 /* Reduced motion — disable looping animations for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
     .bulb-leader,
