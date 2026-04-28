@@ -543,7 +543,7 @@ header .hamburger span {
     width: 100%;
     overflow: hidden;
     line-height: 0;
-    background: transparent;
+    background-color: var(--bg-ivory);
 }
 
 .wave-divider svg {
