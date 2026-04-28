@@ -23,13 +23,13 @@
     --color-text-secondary: #1B2E4B;
     --color-white: #FFFFFF;
 
-    /* Button / Action Colors — Burnt Sienna (10% accent) */
-    --color-primary-btn: #B05520;
+    /* Button / Action Colors — Accessible Sienna #B05520 (Burnt Sienna darkened for WCAG 2.1 AA on light backgrounds) */
+    --color-primary-btn: #B05520; /* Accessible Sienna — official Manara palette colour */
     --color-primary-btn-hover: #1B2E4B;
 
     /* Borders */
     --color-border-highlight: #D4743A;
-    --color-border-gray: #D8D8D8;
+    --color-border-subtle: #C5B9A8; /* Warm Gray — replaces off-palette #C5B9A8 /* Warm Gray */ */
     --color-border-neon: #1B2E4B;
 
     /* Backgrounds */
@@ -40,22 +40,20 @@
     /* 30% — section backgrounds */
     --bg-ivory: #F5F0E8;
     /* 30% — cards, surfaces */
-    --bg-pink-light: #E5DDD0;
-    /* Parchment for sections */
-    --bg-pink-dark: #E5DDD0;
-    --bg-blue-light: #F5F0E8;
-    /* Warm Ivory */
-    --bg-yellow-pink: #E5DDD0;
-    --bg-blue-dark: #1B2E4B;
+    --bg-section: #E5DDD0; /* Parchment — renamed from --bg-pink-light */
+    --bg-section-alt: #E5DDD0; /* Parchment — renamed from --bg-pink-dark */
+    --bg-surface: #F5F0E8; /* Warm Ivory — renamed from --bg-blue-light */
+    --bg-warm: #E5DDD0; /* Parchment — renamed from --bg-yellow-pink */
+    --bg-navy-deep: #1B2E4B; /* Deep Navy — renamed from --bg-blue-dark */
 
     /* Accents */
-    --accent-yellow: #D4743A;
-    --accent-blue: #E5DDD0;
+    --accent-sienna: #D4743A; /* Burnt Sienna — renamed from --accent-yellow */
+    --accent-parchment: #E5DDD0; /* Parchment — renamed from --accent-blue */
     --accent-orange: #D4743A;
 
     /* Theme-dependent derived values */
     --shadow-accent: #E5DDD0;
-    --focus-ring: rgba(176, 85, 32, 0.5);
+    --focus-ring: rgba(176, 85, 32, 0.4); /* Accessible Sienna at 40% opacity */
 }
 
 /* ========================================
@@ -68,50 +66,50 @@
 [data-theme="coral"] {
     --color-primary-btn: #B05520;
     --color-primary-btn-hover: #1B2E4B;
-    --bg-pink-light: #E5DDD0;
-    --accent-yellow: #D4743A;
+    --bg-section: #E5DDD0;
+    --accent-sienna: #D4743A; /* Burnt Sienna — renamed from --accent-yellow */
     --shadow-accent: #E5DDD0;
-    --focus-ring: rgba(176, 85, 32, 0.5);
+    --focus-ring: rgba(176, 85, 32, 0.4); /* Accessible Sienna at 40% opacity */
 }
 
 /* Evergreen — scholarly, natural, wise */
 [data-theme="evergreen"] {
     --color-primary-btn: #B05520;
     --color-primary-btn-hover: #1B2E4B;
-    --bg-pink-light: #E5DDD0;
-    --accent-yellow: #D4743A;
+    --bg-section: #E5DDD0;
+    --accent-sienna: #D4743A; /* Burnt Sienna — renamed from --accent-yellow */
     --shadow-accent: #E5DDD0;
-    --focus-ring: rgba(176, 85, 32, 0.5);
+    --focus-ring: rgba(176, 85, 32, 0.4); /* Accessible Sienna at 40% opacity */
 }
 
 /* Claret — refined, classic academia */
 [data-theme="claret"] {
     --color-primary-btn: #B05520;
     --color-primary-btn-hover: #1B2E4B;
-    --bg-pink-light: #E5DDD0;
-    --accent-yellow: #D4743A;
+    --bg-section: #E5DDD0;
+    --accent-sienna: #D4743A; /* Burnt Sienna — renamed from --accent-yellow */
     --shadow-accent: #E5DDD0;
-    --focus-ring: rgba(176, 85, 32, 0.5);
+    --focus-ring: rgba(176, 85, 32, 0.4); /* Accessible Sienna at 40% opacity */
 }
 
 /* Slate & Amber — modern professional scholarship */
 [data-theme="slate"] {
     --color-primary-btn: #B05520;
     --color-primary-btn-hover: #1B2E4B;
-    --bg-pink-light: #E5DDD0;
-    --accent-yellow: #D4743A;
+    --bg-section: #E5DDD0;
+    --accent-sienna: #D4743A; /* Burnt Sienna — renamed from --accent-yellow */
     --shadow-accent: #E5DDD0;
-    --focus-ring: rgba(176, 85, 32, 0.5);
+    --focus-ring: rgba(176, 85, 32, 0.4); /* Accessible Sienna at 40% opacity */
 }
 
 /* Teal & Copper — innovative education */
 [data-theme="teal"] {
     --color-primary-btn: #B05520;
     --color-primary-btn-hover: #1B2E4B;
-    --bg-pink-light: #E5DDD0;
-    --accent-yellow: #D4743A;
+    --bg-section: #E5DDD0;
+    --accent-sienna: #D4743A; /* Burnt Sienna — renamed from --accent-yellow */
     --shadow-accent: #E5DDD0;
-    --focus-ring: rgba(176, 85, 32, 0.5);
+    --focus-ring: rgba(176, 85, 32, 0.4); /* Accessible Sienna at 40% opacity */
 }
 
 /* Reset & Base Styles */
@@ -349,12 +347,12 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #D0C8BC;
+    border-bottom: 1px solid rgba(139, 110, 60, 0.25); /* Warm Umber tint */
     transition: border-bottom 0.3s ease;
 }
 
 header.scrolled {
-    border-bottom: 1px solid #C0B8AC;
+    border-bottom: 1px solid rgba(139, 110, 60, 0.35); /* Warm Umber tint — scrolled */
 }
 
 /* Logo navy on parchment header */
@@ -375,7 +373,7 @@ header .nav-links a:hover {
 
 /* Contact Us button in nav — darkened Sienna for WCAG AA contrast */
 header .nav-links .btn-primary {
-    background-color: #B05520;
+    background-color: #B05520; /* Accessible Sienna */
     color: #FFFFFF;
 }
 
@@ -562,7 +560,7 @@ header .hamburger span {
     align-items: flex-start;
     gap: 1.5rem;
     padding: 1.75rem 0;
-    border-top: 2px solid var(--color-border-gray);
+    border-top: 2px solid var(--color-border-subtle);
     background: transparent;
     border-radius: 0;
     box-shadow: none;
@@ -625,7 +623,7 @@ header .hamburger span {
 
 /* Commitment Section */
 .commitment {
-    background-color: var(--bg-pink-light);
+    background-color: var(--bg-section);
 }
 
 .commitment-content {
@@ -665,7 +663,7 @@ header .hamburger span {
 /* Project Card Styles */
 .project-col {
     background: var(--bg-ivory);
-    border: 1px solid var(--color-border-gray);
+    border: 1px solid var(--color-border-subtle);
     border-radius: 0px;
     /* Square corners to match theme */
     padding: 2rem;
@@ -784,7 +782,7 @@ header .hamburger span {
 
 /* Contact Section */
 .contact {
-    background-color: var(--bg-pink-light);
+    background-color: var(--bg-section);
 }
 
 /* Two-column layout for contact */
@@ -832,7 +830,7 @@ header .hamburger span {
     border-radius: 0px;
     /* Square corners to match theme */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--color-border-gray);
+    border: 1px solid var(--color-border-subtle);
 }
 
 /* Mobile: stack vertically */
@@ -865,7 +863,7 @@ header .hamburger span {
 .form-control {
     width: 100%;
     padding: 0.8rem 1rem;
-    border: 1px solid var(--color-border-gray);
+    border: 1px solid var(--color-border-subtle);
     border-radius: 6px;
     font-family: var(--font-body);
     font-size: 1rem;
@@ -1139,7 +1137,7 @@ footer .logo {
     outline-offset: 2px;
 }
 .anim-pause-btn:hover {
-    background: #d5c9bb;
+    background: #C5B9A8; /* Warm Gray */
 }
 .anim-btn-label {
     display: none;
