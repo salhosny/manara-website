@@ -462,14 +462,14 @@ header .hamburger span {
     width: 100%;
     max-width: 315px;
     aspect-ratio: 1 / 1;
-    background-color: var(--bg-white);
+    background-color: var(--shadow-accent);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
     color: var(--color-text-secondary);
-    box-shadow: 20px 20px 0px var(--shadow-accent);
-    border: 2px solid var(--color-text-primary);
+    box-shadow: none;
+    border: none;
     overflow: hidden;
 }
 
@@ -999,7 +999,7 @@ footer .logo {
 
     .hero-visual {
         margin: 0 auto;
-        max-width: min(263px, calc(100% - 40px));  /* leave room for box-shadow (20px) on each side */
+        max-width: min(315px, calc(100% - 40px));
     }
 }
 
@@ -1121,24 +1121,27 @@ footer .logo {
     right: 12px;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    background: rgba(255, 255, 255, 0.92);
-    border: 2px solid #1B2E4B;
-    border-radius: 20px;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    background: var(--shadow-accent);
+    border: none;
+    border-radius: 50%;
     color: #1B2E4B;
-    font-size: 0.78rem;
-    font-weight: 600;
     cursor: pointer;
     z-index: 10;
-    line-height: 1;
+    box-shadow: none;
 }
 .anim-pause-btn:focus-visible {
     outline: 2px solid var(--color-primary-btn);
     outline-offset: 2px;
 }
 .anim-pause-btn:hover {
-    background: #fff;
+    background: #d5c9bb;
+}
+.anim-btn-label {
+    display: none;
 }
 .hero-visual {
     position: relative;
