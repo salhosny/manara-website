@@ -19,36 +19,36 @@
 
     /* Text Colors */
     --color-text-primary: #1B2E4B;
-    /* Deep Navy — 60% dominant tone */
+    /* Deep Navy â€” 60% dominant tone */
     --color-text-secondary: #1B2E4B;
     --color-white: #FFFFFF;
 
-    /* Button / Action Colors — Accessible Sienna #B05520 (Burnt Sienna darkened for WCAG 2.1 AA on light backgrounds) */
-    --color-primary-btn: #B05520; /* Accessible Sienna — official Manara palette colour */
+    /* Button / Action Colors â€” Accessible Sienna #B05520 (Burnt Sienna darkened for WCAG 2.1 AA on light backgrounds) */
+    --color-primary-btn: #B05520; /* Accessible Sienna â€” official Manara palette colour */
     --color-primary-btn-hover: #1B2E4B;
 
     /* Borders */
     --color-border-highlight: #D4743A;
-    --color-border-subtle: #C5B9A8; /* Warm Gray — replaces off-palette #C5B9A8 /* Warm Gray */ */
+    --color-border-subtle: #C5B9A8; /* Warm Gray â€” replaces off-palette #C5B9A8 /* Warm Gray */ */
     --color-border-neon: #1B2E4B;
 
     /* Backgrounds */
     --bg-white: #FFFFFF;
     --bg-navy: #1B2E4B;
-    /* 60% — nav, hero, footer */
+    /* 60% â€” nav, hero, footer */
     --bg-parchment: #E5DDD0;
-    /* 30% — section backgrounds */
+    /* 30% â€” section backgrounds */
     --bg-ivory: #F5F0E8;
-    /* 30% — cards, surfaces */
-    --bg-section: #E5DDD0; /* Parchment — renamed from --bg-pink-light */
-    --bg-section-alt: #E5DDD0; /* Parchment — renamed from --bg-pink-dark */
-    --bg-surface: #F5F0E8; /* Warm Ivory — renamed from --bg-blue-light */
-    --bg-warm: #E5DDD0; /* Parchment — renamed from --bg-yellow-pink */
-    --bg-navy-deep: #1B2E4B; /* Deep Navy — renamed from --bg-blue-dark */
+    /* 30% â€” cards, surfaces */
+    --bg-section: #E5DDD0; /* Parchment â€” renamed from --bg-pink-light */
+    --bg-section-alt: #E5DDD0; /* Parchment â€” renamed from --bg-pink-dark */
+    --bg-surface: #F5F0E8; /* Warm Ivory â€” renamed from --bg-blue-light */
+    --bg-warm: #E5DDD0; /* Parchment â€” renamed from --bg-yellow-pink */
+    --bg-navy-deep: #1B2E4B; /* Deep Navy â€” renamed from --bg-blue-dark */
 
     /* Accents */
-    --accent-sienna: #D4743A; /* Burnt Sienna — renamed from --accent-yellow */
-    --accent-parchment: #E5DDD0; /* Parchment — renamed from --accent-blue */
+    --accent-sienna: #D4743A; /* Burnt Sienna â€” renamed from --accent-yellow */
+    --accent-parchment: #E5DDD0; /* Parchment â€” renamed from --accent-blue */
     --accent-orange: #D4743A;
 
     /* Theme-dependent derived values */
@@ -62,52 +62,52 @@
    Only accent / action / background tones change.
    ======================================== */
 
-/* Coral — playful, warm, energetic */
+/* Coral â€” playful, warm, energetic */
 [data-theme="coral"] {
     --color-primary-btn: #B05520;
     --color-primary-btn-hover: #1B2E4B;
     --bg-section: #E5DDD0;
-    --accent-sienna: #D4743A; /* Burnt Sienna — renamed from --accent-yellow */
+    --accent-sienna: #D4743A; /* Burnt Sienna â€” renamed from --accent-yellow */
     --shadow-accent: #E5DDD0;
     --focus-ring: rgba(176, 85, 32, 0.4); /* Accessible Sienna at 40% opacity */
 }
 
-/* Evergreen — scholarly, natural, wise */
+/* Evergreen â€” scholarly, natural, wise */
 [data-theme="evergreen"] {
     --color-primary-btn: #B05520;
     --color-primary-btn-hover: #1B2E4B;
     --bg-section: #E5DDD0;
-    --accent-sienna: #D4743A; /* Burnt Sienna — renamed from --accent-yellow */
+    --accent-sienna: #D4743A; /* Burnt Sienna â€” renamed from --accent-yellow */
     --shadow-accent: #E5DDD0;
     --focus-ring: rgba(176, 85, 32, 0.4); /* Accessible Sienna at 40% opacity */
 }
 
-/* Claret — refined, classic academia */
+/* Claret â€” refined, classic academia */
 [data-theme="claret"] {
     --color-primary-btn: #B05520;
     --color-primary-btn-hover: #1B2E4B;
     --bg-section: #E5DDD0;
-    --accent-sienna: #D4743A; /* Burnt Sienna — renamed from --accent-yellow */
+    --accent-sienna: #D4743A; /* Burnt Sienna â€” renamed from --accent-yellow */
     --shadow-accent: #E5DDD0;
     --focus-ring: rgba(176, 85, 32, 0.4); /* Accessible Sienna at 40% opacity */
 }
 
-/* Slate & Amber — modern professional scholarship */
+/* Slate & Amber â€” modern professional scholarship */
 [data-theme="slate"] {
     --color-primary-btn: #B05520;
     --color-primary-btn-hover: #1B2E4B;
     --bg-section: #E5DDD0;
-    --accent-sienna: #D4743A; /* Burnt Sienna — renamed from --accent-yellow */
+    --accent-sienna: #D4743A; /* Burnt Sienna â€” renamed from --accent-yellow */
     --shadow-accent: #E5DDD0;
     --focus-ring: rgba(176, 85, 32, 0.4); /* Accessible Sienna at 40% opacity */
 }
 
-/* Teal & Copper — innovative education */
+/* Teal & Copper â€” innovative education */
 [data-theme="teal"] {
     --color-primary-btn: #B05520;
     --color-primary-btn-hover: #1B2E4B;
     --bg-section: #E5DDD0;
-    --accent-sienna: #D4743A; /* Burnt Sienna — renamed from --accent-yellow */
+    --accent-sienna: #D4743A; /* Burnt Sienna â€” renamed from --accent-yellow */
     --shadow-accent: #E5DDD0;
     --focus-ring: rgba(176, 85, 32, 0.4); /* Accessible Sienna at 40% opacity */
 }
@@ -160,7 +160,7 @@ img {
     display: block;
 }
 
-/* Skip navigation link — hidden until focused by keyboard */
+/* Skip navigation link â€” hidden until focused by keyboard */
 .skip-link {
     position: absolute;
     top: -100%;
@@ -352,7 +352,7 @@ header {
 }
 
 header.scrolled {
-    border-bottom: 1px solid rgba(139, 110, 60, 0.35); /* Warm Umber tint — scrolled */
+    border-bottom: 1px solid rgba(139, 110, 60, 0.35); /* Warm Umber tint â€” scrolled */
 }
 
 /* Logo navy on parchment header */
@@ -371,7 +371,7 @@ header .nav-links a:hover {
     color: #D4743A;
 }
 
-/* Contact Us button in nav — darkened Sienna for WCAG AA contrast */
+/* Contact Us button in nav â€” darkened Sienna for WCAG AA contrast */
 header .nav-links .btn-primary {
     background-color: #B05520; /* Accessible Sienna */
     color: #FFFFFF;
@@ -501,8 +501,8 @@ header .hamburger span {
 
 @keyframes bulb-flow {
     0%    { stroke-dashoffset: 2.8; }    /* bolt just before path start */
-    49.2% { stroke-dashoffset: -64.7; } /* head enters coil — slow down */
-    65.9% { stroke-dashoffset: -74.1; } /* tail exits coil — resume speed */
+    49.2% { stroke-dashoffset: -64.7; } /* head enters coil â€” slow down */
+    65.9% { stroke-dashoffset: -74.1; } /* tail exits coil â€” resume speed */
     86.8% { stroke-dashoffset: -102.8; }/* tail cleared path */
     100%  { stroke-dashoffset: -102.8; }/* pause before loop */
 }
@@ -576,7 +576,7 @@ header .hamburger span {
     display: none;
 }
 
-/* Icon wrapper — clean square with no border */
+/* Icon wrapper â€” clean square with no border */
 .service-icon-wrap {
     width: 72px;
     height: 72px;
@@ -782,7 +782,7 @@ header .hamburger span {
 
 /* Contact Section */
 .contact {
-    background-color: var(--bg-section);
+    background-color: var(--bg-ivory); /* Warm Ivory */
 }
 
 /* Two-column layout for contact */
@@ -977,7 +977,7 @@ footer .logo {
     }
 }
 
-/* Responsive — Hero stacks before buttons would need to wrap */
+/* Responsive â€” Hero stacks before buttons would need to wrap */
 @media (max-width: 900px) {
     .hero-content {
         grid-template-columns: 1fr;
@@ -1002,7 +1002,7 @@ footer .logo {
     }
 }
 
-/* Hamburger button — hidden on desktop */
+/* Hamburger button â€” hidden on desktop */
 .hamburger {
     display: none;
     background: none;
@@ -1058,7 +1058,7 @@ footer .logo {
         position: relative;
     }
 
-    /* nav element shouldn't take flex space — its dropdown is absolute */
+    /* nav element shouldn't take flex space â€” its dropdown is absolute */
     .nav-container nav {
         position: static;
         width: 0;
@@ -1146,7 +1146,7 @@ footer .logo {
     position: relative;
 }
 
-/* Reduced motion — disable looping animations for users who prefer it */
+/* Reduced motion â€” disable looping animations for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
     .bulb-leader,
     .bulb-follower {
