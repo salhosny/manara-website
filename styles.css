@@ -469,6 +469,7 @@ header .hamburger span {
     box-shadow: none;
     border: none;
     overflow: hidden;
+    justify-self: center;
 }
 
 .hero-shape-bg {
