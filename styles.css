@@ -1095,6 +1095,14 @@ footer .logo {
         border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
 
+    header .nav-links a {
+        color: #FFFFFF;
+    }
+
+    header .nav-links a:hover {
+        color: #D4743A;
+    }
+
     .nav-links li:last-child a {
         border-bottom: none;
         margin-top: 0.5rem;
