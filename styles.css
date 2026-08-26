@@ -17,6 +17,9 @@
     --font-heading: 'Georgia', serif;
     --font-body: 'Outfit', 'Gilroy', Arial, Helvetica, sans-serif;
 
+    /* Shared reading-width (matches about page .content-block) */
+    --content-max: 800px;
+
     /* Text Colors */
     --color-text-primary: #1B2E4B;
     /* Deep Navy â€” 60% dominant tone */
@@ -280,8 +283,12 @@ img {
 
 .hero-btns .btn {
     white-space: nowrap;
-    flex: 1;
+    flex: 1 1 auto;
     text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 /* On very narrow screens, allow buttons to compress slightly */
@@ -460,9 +467,10 @@ header .hamburger span {
 
 .hero-visual {
     position: relative;
-    flex: 0 0 auto;
-    width: 100%;
+    flex: 0 1 315px;
+    width: auto;
     max-width: 315px;
+    min-width: 0;
     aspect-ratio: 1 / 1;
     background-color: var(--shadow-accent);
     display: flex;
@@ -631,7 +639,7 @@ header .hamburger span {
 }
 
 .commitment-content {
-    max-width: 800px;
+    max-width: var(--content-max);
     margin: 0 auto;
     text-align: center;
 }
@@ -760,27 +768,60 @@ header .hamburger span {
 
 /* Portfolio Tablet/Mobile Responsiveness */
 @media (max-width: 992px) {
+    .portfolio {
+        padding-bottom: 4rem;
+    }
+
     .portfolio-cards {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        /* Wrap naturally; center leftover cards on incomplete rows */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.25rem;
+    }
+
+    .project-col {
+        flex: 0 1 280px;
+        width: 100%;
+        max-width: 300px;
+        padding: 1.25rem 1.25rem 1.5rem;
     }
 
     .project-content-wrapper {
-        max-width: 600px;
+        max-width: none;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .project-col h3 {
+        min-height: 0;
+        margin-bottom: 1rem;
+        font-size: 1.35rem;
     }
 
     .project-visual {
         height: auto;
         aspect-ratio: 4 / 3;
-        max-width: 100%;
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1.25rem;
+    }
+
+    .project-desc {
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 600px) {
+    .project-col {
+        flex: 1 1 100%;
+        max-width: 22rem;
+        padding: 1rem 1rem 1.25rem;
+    }
+
     .project-visual {
-        max-width: 100%;
+        max-width: 180px;
     }
 }
 
@@ -981,32 +1022,129 @@ footer .logo {
     }
 }
 
-/* Responsive â€” Hero stacks before buttons would need to wrap */
+/*
+ * Responsive breakpoints (three bands):
+ *   > 900px           — desktop (side-by-side hero)
+ *   601px – 900px     — tablet (side-by-side, same type size)
+ *   ≤ 600px           — phone (stacked hero, image hidden)
+ */
+
+/* Shared body reading width below desktop; nav/footer keep full .container */
 @media (max-width: 900px) {
+    main .container {
+        max-width: var(--content-max);
+    }
+}
+
+/* Tablet: side-by-side hero; scale type/CTAs together so proportions hold */
+@media (max-width: 900px) and (min-width: 601px) {
+    .hero {
+        padding: 4rem 0 3.5rem;
+    }
+
     .hero-content {
-        flex-direction: column;
-        text-align: center;
+        gap: clamp(1.25rem, 3.5vw, 2.75rem);
+        min-width: 0;
     }
 
     .hero-text {
-        max-width: 100%;
+        flex: 1 1 26rem;
+        min-width: 0;
+        max-width: 26rem;
+    }
+
+    .hero-text h1 {
+        font-size: 1.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-btns {
+        gap: 0.5rem;
+    }
+
+    .hero-btns .btn {
+        padding: 0.6rem 1.1rem;
+        font-size: 0.9rem;
+    }
+
+    .manara-signature {
+        height: 26px;
+    }
+
+    .hero-visual {
+        flex: 0 1 210px;
+        max-width: 210px;
+        min-width: 0;
+    }
+
+    .section-title,
+    .commitment-content h2 {
+        font-size: 2.15rem;
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+}
+
+/* Phone: stack copy, drop illustration */
+@media (max-width: 600px) {
+    main .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .hero {
+        padding: 3rem 0 2.5rem;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 0;
+    }
+
+    .hero-text {
+        flex: 0 0 auto;
+        max-width: var(--content-max);
+        width: 100%;
     }
 
     .hero-text h1 {
         font-size: 1.8rem;
-    }
-
-    .hero-text p {
-        margin: 0 auto 2rem;
+        margin-bottom: 1.5rem;
     }
 
     .hero-btns {
         justify-content: center;
+        max-width: 18rem;
+        width: 100%;
+        margin: 0 auto;
+        gap: 0.5rem;
+    }
+
+    .hero-btns .btn {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 0.7rem 0.85rem;
+        font-size: 0.9rem;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .manara-signature {
+        height: 24px;
+        flex: 0 0 auto;
     }
 
     .hero-visual {
-        margin: 0 auto;
-        max-width: min(315px, calc(100% - 40px));
+        display: none;
+    }
+
+    .section {
+        padding: 3rem 0;
     }
 }
 
@@ -1046,14 +1184,20 @@ footer .logo {
 }
 
 @media (max-width: 768px) {
-    /* Prevent horizontal scroll on mobile */
+    /* clip avoids creating a scroll container (hidden breaks position:sticky) */
     html {
         scrollbar-gutter: auto;
-        overflow-x: hidden;    /* needed on html too for iOS Safari */
+        overflow-x: clip;
     }
 
     body {
-        overflow-x: hidden;
+        overflow-x: clip;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
 
     .hamburger {
@@ -1062,11 +1206,12 @@ footer .logo {
         margin-left: auto;
     }
 
+    /* Let the menu position against the sticky header, not the inner container */
     .nav-container {
-        position: relative;
+        position: static;
     }
 
-    /* nav element shouldn't take flex space â€” its dropdown is absolute */
+    /* nav element shouldn't take flex space — its dropdown is absolute */
     .nav-container nav {
         position: static;
         width: 0;
@@ -1080,7 +1225,7 @@ footer .logo {
         top: 100%;
         left: 0;
         right: 0;
-        width: 100vw;
+        width: auto;
         background-color: var(--bg-navy);
         padding: 1rem 2rem 1.5rem;
         gap: 0;
