@@ -654,6 +654,55 @@ header .hamburger span {
     margin-bottom: 1.5rem;
 }
 
+/* About Page */
+.about-hero {
+    background-color: var(--bg-ivory);
+    padding: 8rem 0 4rem;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.about-hero p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    max-width: var(--content-max);
+    margin: 0 auto;
+}
+
+.about-section {
+    padding: 2.5rem 0;
+}
+
+.content-block {
+    max-width: var(--content-max);
+    margin: 0 auto;
+}
+
+.content-block h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.35rem;
+    color: var(--color-text-primary);
+}
+
+.content-block p {
+    font-size: 1.15rem;
+    margin-bottom: 1.4rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+}
+
+.content-block p:last-of-type {
+    margin-bottom: 0;
+}
+
+.content-block .btn-primary {
+    margin-top: 2rem;
+}
+
 /* Portfolio Section Refactor */
 .portfolio {
     background-color: var(--bg-parchment);
@@ -1078,8 +1127,17 @@ footer .logo {
     }
 
     .section-title,
-    .commitment-content h2 {
+    .commitment-content h2,
+    .content-block h2 {
         font-size: 2.15rem;
+    }
+
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-hero {
+        padding: 5rem 0 3rem;
     }
 
     .section {
@@ -1113,6 +1171,18 @@ footer .logo {
     .hero-text h1 {
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
+    }
+
+    .about-hero {
+        padding: 3.5rem 0 2.5rem;
+    }
+
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .content-block h2 {
+        font-size: 2.15rem;
     }
 
     .hero-btns {
