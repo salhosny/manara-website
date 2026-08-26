@@ -425,19 +425,22 @@ header .hamburger span {
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    gap: 6.5rem;
     overflow: visible;
+}
+
+.hero-text {
+    flex: 0 1 28rem;
+    max-width: 28rem;
 }
 
 .hero-text h1 {
     font-size: 2.2rem;
     /* ~35px */
     color: var(--color-text-primary);
-    margin-bottom: 2rem;
-    font-weight: 700;
     margin-bottom: 2rem;
     font-weight: 700;
     line-height: 1.3;
@@ -457,6 +460,7 @@ header .hamburger span {
 
 .hero-visual {
     position: relative;
+    flex: 0 0 auto;
     width: 100%;
     max-width: 315px;
     aspect-ratio: 1 / 1;
@@ -469,7 +473,6 @@ header .hamburger span {
     box-shadow: none;
     border: none;
     overflow: hidden;
-    justify-self: center;
 }
 
 .hero-shape-bg {
@@ -981,8 +984,12 @@ footer .logo {
 /* Responsive â€” Hero stacks before buttons would need to wrap */
 @media (max-width: 900px) {
     .hero-content {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
     }
 
     .hero-text h1 {
