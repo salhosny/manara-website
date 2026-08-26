@@ -526,6 +526,7 @@ header .hamburger span {
 /* Services Section */
 .services {
     background-color: var(--bg-ivory);
+    padding-bottom: 2rem;
 }
 
 .services .text-center {
@@ -545,20 +546,6 @@ header .hamburger span {
     margin-bottom: 1rem;
     position: relative;
     display: inline-block;
-}
-
-/* Wave Divider */
-.wave-divider {
-    padding: 2rem 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    background-color: var(--bg-ivory);
-}
-
-.wave-divider svg {
-    width: 100%;
-    height: 30px;
 }
 
 .services-grid {
@@ -1143,6 +1130,10 @@ footer .logo {
     .section {
         padding: 3rem 0;
     }
+
+    .services {
+        padding-bottom: 1.5rem;
+    }
 }
 
 /* Phone: stack copy, drop illustration */
@@ -1215,6 +1206,10 @@ footer .logo {
 
     .section {
         padding: 3rem 0;
+    }
+
+    .services {
+        padding-bottom: 1.5rem;
     }
 }
 
