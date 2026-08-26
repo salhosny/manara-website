@@ -435,7 +435,7 @@ header .hamburger span {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6.5rem;
+    gap: 8.5rem;
     overflow: visible;
 }
 
