@@ -18,41 +18,42 @@
     --font-body: 'Outfit', 'Gilroy', Arial, Helvetica, sans-serif;
 
     /* Text Colors */
-    --color-text-primary: #090335;
-    /* Deep Navy */
-    --color-text-secondary: #0A33A4;
-    /* Darker Neon Blue */
+    --color-text-primary: #1B2E4B;
+    /* Deep Navy â€” 60% dominant tone */
+    --color-text-secondary: #1B2E4B;
     --color-white: #FFFFFF;
 
-    /* Button / Action Colors — Crimson & Terracotta */
-    --color-primary-btn: #902923;
-    --color-primary-btn-hover: #B84040;
+    /* Button / Action Colors â€” Accessible Sienna #B05520 (Burnt Sienna darkened for WCAG 2.1 AA on light backgrounds) */
+    --color-primary-btn: #B05520; /* Accessible Sienna â€” official Manara palette colour */
+    --color-primary-btn-hover: #1B2E4B;
 
     /* Borders */
-    --color-border-highlight: #FF0000;
-    /* Very thin highlight */
-    --color-border-gray: #D8D8D8;
-    --color-border-neon: #002BD0;
+    --color-border-highlight: #D4743A;
+    --color-border-subtle: #C5B9A8; /* Warm Gray â€” replaces off-palette #C5B9A8 /* Warm Gray */ */
+    --color-border-neon: #1B2E4B;
 
     /* Backgrounds */
     --bg-white: #FFFFFF;
-    --bg-pink-light: #FAF0ED;
-    --bg-pink-dark: #FFE8E2;
-    /* Hero Background */
-    --bg-blue-light: #E3F3FA;
-    /* Features Background */
-    --bg-yellow-pink: #FFEFE1;
-    /* Highlights */
-    --bg-blue-dark: #8A9DE9;
+    --bg-navy: #1B2E4B;
+    /* 60% â€” nav, hero, footer */
+    --bg-parchment: #E5DDD0;
+    /* 30% â€” section backgrounds */
+    --bg-ivory: #F5F0E8;
+    /* 30% â€” cards, surfaces */
+    --bg-section: #E5DDD0; /* Parchment â€” renamed from --bg-pink-light */
+    --bg-section-alt: #E5DDD0; /* Parchment â€” renamed from --bg-pink-dark */
+    --bg-surface: #F5F0E8; /* Warm Ivory â€” renamed from --bg-blue-light */
+    --bg-warm: #E5DDD0; /* Parchment â€” renamed from --bg-yellow-pink */
+    --bg-navy-deep: #1B2E4B; /* Deep Navy â€” renamed from --bg-blue-dark */
 
     /* Accents */
-    --accent-yellow: #E57A44;
-    --accent-blue: #9FD7ED;
-    --accent-orange: #FF9239;
+    --accent-sienna: #D4743A; /* Burnt Sienna â€” renamed from --accent-yellow */
+    --accent-parchment: #E5DDD0; /* Parchment â€” renamed from --accent-blue */
+    --accent-orange: #D4743A;
 
     /* Theme-dependent derived values */
-    --shadow-accent: #F0D6C8;
-    --focus-ring: rgba(144, 41, 35, 0.2);
+    --shadow-accent: #E5DDD0;
+    --focus-ring: rgba(176, 85, 32, 0.4); /* Accessible Sienna at 40% opacity */
 }
 
 /* ========================================
@@ -61,54 +62,54 @@
    Only accent / action / background tones change.
    ======================================== */
 
-/* Coral — playful, warm, energetic (original theme) */
+/* Coral â€” playful, warm, energetic */
 [data-theme="coral"] {
-    --color-primary-btn: #FE7268;
-    --color-primary-btn-hover: #FFB0A1;
-    --bg-pink-light: #FFF4F2;
-    --accent-yellow: #FFDC00;
-    --shadow-accent: #FBE3DB;
-    --focus-ring: rgba(254, 114, 104, 0.2);
+    --color-primary-btn: #B05520;
+    --color-primary-btn-hover: #1B2E4B;
+    --bg-section: #E5DDD0;
+    --accent-sienna: #D4743A; /* Burnt Sienna â€” renamed from --accent-yellow */
+    --shadow-accent: #E5DDD0;
+    --focus-ring: rgba(176, 85, 32, 0.4); /* Accessible Sienna at 40% opacity */
 }
 
-/* Evergreen — scholarly, natural, wise */
+/* Evergreen â€” scholarly, natural, wise */
 [data-theme="evergreen"] {
-    --color-primary-btn: #2D6A4F;
-    --color-primary-btn-hover: #52B788;
-    --bg-pink-light: #F0F5F2;
-    --accent-yellow: #B7A14E;
-    --shadow-accent: #D4E0D8;
-    --focus-ring: rgba(45, 106, 79, 0.2);
+    --color-primary-btn: #B05520;
+    --color-primary-btn-hover: #1B2E4B;
+    --bg-section: #E5DDD0;
+    --accent-sienna: #D4743A; /* Burnt Sienna â€” renamed from --accent-yellow */
+    --shadow-accent: #E5DDD0;
+    --focus-ring: rgba(176, 85, 32, 0.4); /* Accessible Sienna at 40% opacity */
 }
 
-/* Claret — refined, classic academia */
+/* Claret â€” refined, classic academia */
 [data-theme="claret"] {
-    --color-primary-btn: #722F37;
-    --color-primary-btn-hover: #9B4D56;
-    --bg-pink-light: #F7F2F3;
-    --accent-yellow: #C9A96E;
-    --shadow-accent: #E8D8DB;
-    --focus-ring: rgba(114, 47, 55, 0.2);
+    --color-primary-btn: #B05520;
+    --color-primary-btn-hover: #1B2E4B;
+    --bg-section: #E5DDD0;
+    --accent-sienna: #D4743A; /* Burnt Sienna â€” renamed from --accent-yellow */
+    --shadow-accent: #E5DDD0;
+    --focus-ring: rgba(176, 85, 32, 0.4); /* Accessible Sienna at 40% opacity */
 }
 
-/* Slate & Amber — modern professional scholarship */
+/* Slate & Amber â€” modern professional scholarship */
 [data-theme="slate"] {
-    --color-primary-btn: #4A5568;
-    --color-primary-btn-hover: #718096;
-    --bg-pink-light: #F7F8FA;
-    --accent-yellow: #D69E2E;
-    --shadow-accent: #E0E3E8;
-    --focus-ring: rgba(74, 85, 104, 0.2);
+    --color-primary-btn: #B05520;
+    --color-primary-btn-hover: #1B2E4B;
+    --bg-section: #E5DDD0;
+    --accent-sienna: #D4743A; /* Burnt Sienna â€” renamed from --accent-yellow */
+    --shadow-accent: #E5DDD0;
+    --focus-ring: rgba(176, 85, 32, 0.4); /* Accessible Sienna at 40% opacity */
 }
 
-/* Teal & Copper — innovative education */
+/* Teal & Copper â€” innovative education */
 [data-theme="teal"] {
-    --color-primary-btn: #285E61;
-    --color-primary-btn-hover: #3D8B8F;
-    --bg-pink-light: #F0F5F5;
-    --accent-yellow: #C07C4E;
-    --shadow-accent: #CCE3E4;
-    --focus-ring: rgba(40, 94, 97, 0.2);
+    --color-primary-btn: #B05520;
+    --color-primary-btn-hover: #1B2E4B;
+    --bg-section: #E5DDD0;
+    --accent-sienna: #D4743A; /* Burnt Sienna â€” renamed from --accent-yellow */
+    --shadow-accent: #E5DDD0;
+    --focus-ring: rgba(176, 85, 32, 0.4); /* Accessible Sienna at 40% opacity */
 }
 
 /* Reset & Base Styles */
@@ -157,6 +158,28 @@ ul {
 img {
     max-width: 100%;
     display: block;
+}
+
+/* Skip navigation link â€” hidden until focused by keyboard */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--bg-navy);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    z-index: 9999;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    transition: top 0.15s ease;
+}
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid var(--color-primary-btn);
+    outline-offset: 2px;
 }
 
 /* Utilities */
@@ -257,7 +280,8 @@ img {
 
 .hero-btns .btn {
     white-space: nowrap;
-    flex-shrink: 0;
+    flex: 1;
+    text-align: center;
 }
 
 /* On very narrow screens, allow buttons to compress slightly */
@@ -314,23 +338,53 @@ img {
 
 /* Header / Nav */
 header {
-    background-color: var(--bg-white);
-    /* Always white */
+    background-color: #E5DDD0;
     padding: 1.5rem 0;
-    min-height: 72px; /* Fixed height for consistent navbar across all pages */
+    min-height: 72px;
     display: flex;
     align-items: center;
     box-sizing: border-box;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid transparent;
-    /* No border initially */
+    border-bottom: 1px solid rgba(139, 110, 60, 0.25); /* Warm Umber tint */
     transition: border-bottom 0.3s ease;
 }
 
 header.scrolled {
-    border-bottom: 1px solid var(--color-border-gray);
+    border-bottom: 1px solid rgba(139, 110, 60, 0.35); /* Warm Umber tint â€” scrolled */
+}
+
+/* Logo navy on parchment header */
+header .logo,
+header .logo a {
+    color: #1B2E4B;
+}
+
+/* Nav links navy on parchment header */
+header .nav-links a {
+    color: #1B2E4B;
+    font-weight: 500;
+}
+
+header .nav-links a:hover {
+    color: #D4743A;
+}
+
+/* Contact Us button in nav â€” darkened Sienna for WCAG AA contrast */
+header .nav-links .btn-primary {
+    background-color: #B05520; /* Accessible Sienna */
+    color: #FFFFFF;
+}
+
+header .nav-links .btn-primary:hover {
+    background-color: #1B2E4B;
+    color: #FFFFFF;
+}
+
+/* Hamburger bars navy on parchment */
+header .hamburger span {
+    background-color: #1B2E4B;
 }
 
 .nav-container {
@@ -365,7 +419,7 @@ header.scrolled {
 
 /* Hero Section */
 .hero {
-    background-color: var(--bg-white);
+    background-color: var(--bg-ivory);
     padding: 6rem 0;
     overflow-x: clip;
 }
@@ -404,17 +458,18 @@ header.scrolled {
 .hero-visual {
     position: relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 315px;
     aspect-ratio: 1 / 1;
-    background-color: var(--bg-white);
+    background-color: var(--shadow-accent);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
     color: var(--color-text-secondary);
-    box-shadow: 20px 20px 0px var(--shadow-accent);
-    border: 2px solid var(--color-text-primary);
+    box-shadow: none;
+    border: none;
     overflow: hidden;
+    justify-self: center;
 }
 
 .hero-shape-bg {
@@ -431,12 +486,35 @@ header.scrolled {
     display: block;
 }
 
+/* Animated bulb SVG */
+.bulb-svg {
+    width: 92%;
+    height: 92%;
+}
+
+.bulb-leader {
+    animation: bulb-flow 7.6s linear infinite;
+}
+
+.bulb-follower {
+    animation: bulb-flow 7.6s linear 0.47s infinite;
+}
+
+@keyframes bulb-flow {
+    0%    { stroke-dashoffset: 2.8; }    /* bolt just before path start */
+    49.2% { stroke-dashoffset: -64.7; } /* head enters coil â€” slow down */
+    65.9% { stroke-dashoffset: -74.1; } /* tail exits coil â€” resume speed */
+    86.8% { stroke-dashoffset: -102.8; }/* tail cleared path */
+    100%  { stroke-dashoffset: -102.8; }/* pause before loop */
+}
+
+
 /* Solid peach offset block */
 
 
 /* Services Section */
 .services {
-    background-color: var(--bg-white);
+    background-color: var(--bg-ivory);
 }
 
 .services .text-center {
@@ -447,7 +525,6 @@ header.scrolled {
     font-size: 1.1rem;
     line-height: 1.7;
     color: var(--color-text-primary);
-    opacity: 0.7;
     max-width: 560px;
     margin: 0 auto;
 }
@@ -465,6 +542,7 @@ header.scrolled {
     width: 100%;
     overflow: hidden;
     line-height: 0;
+    background-color: var(--bg-ivory);
 }
 
 .wave-divider svg {
@@ -483,7 +561,7 @@ header.scrolled {
     align-items: flex-start;
     gap: 1.5rem;
     padding: 1.75rem 0;
-    border-top: 2px solid var(--color-border-gray);
+    border-top: 2px solid var(--color-border-subtle);
     background: transparent;
     border-radius: 0;
     box-shadow: none;
@@ -499,7 +577,7 @@ header.scrolled {
     display: none;
 }
 
-/* Icon wrapper — clean square with no border */
+/* Icon wrapper â€” clean square with no border */
 .service-icon-wrap {
     width: 72px;
     height: 72px;
@@ -546,7 +624,7 @@ header.scrolled {
 
 /* Commitment Section */
 .commitment {
-    background-color: var(--bg-pink-light);
+    background-color: var(--bg-section);
 }
 
 .commitment-content {
@@ -567,7 +645,7 @@ header.scrolled {
 
 /* Portfolio Section Refactor */
 .portfolio {
-    background-color: var(--bg-white);
+    background-color: var(--bg-parchment);
     padding-bottom: 8rem;
 }
 
@@ -585,14 +663,13 @@ header.scrolled {
 
 /* Project Card Styles */
 .project-col {
-    background: var(--bg-white);
-    border: 1px solid var(--color-border-gray);
+    background: var(--bg-ivory);
+    border: 1px solid var(--color-border-subtle);
     border-radius: 0px;
     /* Square corners to match theme */
     padding: 2rem;
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
 }
 
 /* Subtle hover effect */
@@ -706,7 +783,7 @@ header.scrolled {
 
 /* Contact Section */
 .contact {
-    background-color: var(--bg-pink-light);
+    background-color: var(--bg-ivory); /* Warm Ivory */
 }
 
 /* Two-column layout for contact */
@@ -754,7 +831,7 @@ header.scrolled {
     border-radius: 0px;
     /* Square corners to match theme */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--color-border-gray);
+    border: 1px solid var(--color-border-subtle);
 }
 
 /* Mobile: stack vertically */
@@ -787,14 +864,15 @@ header.scrolled {
 .form-control {
     width: 100%;
     padding: 0.8rem 1rem;
-    border: 1px solid var(--color-border-gray);
+    border: 1px solid var(--color-border-subtle);
     border-radius: 6px;
     font-family: var(--font-body);
     font-size: 1rem;
 }
 
 .form-control:focus {
-    outline: none;
+    outline: 2px solid var(--color-primary-btn);
+    outline-offset: 2px;
     border-color: var(--color-primary-btn);
     box-shadow: 0 0 0 3px var(--focus-ring);
 }
@@ -900,7 +978,7 @@ footer .logo {
     }
 }
 
-/* Responsive — Hero stacks before buttons would need to wrap */
+/* Responsive â€” Hero stacks before buttons would need to wrap */
 @media (max-width: 900px) {
     .hero-content {
         grid-template-columns: 1fr;
@@ -921,11 +999,11 @@ footer .logo {
 
     .hero-visual {
         margin: 0 auto;
-        max-width: min(500px, calc(100% - 40px));  /* leave room for box-shadow (20px) on each side */
+        max-width: min(315px, calc(100% - 40px));
     }
 }
 
-/* Hamburger button — hidden on desktop */
+/* Hamburger button â€” hidden on desktop */
 .hamburger {
     display: none;
     background: none;
@@ -981,7 +1059,7 @@ footer .logo {
         position: relative;
     }
 
-    /* nav element shouldn't take flex space — its dropdown is absolute */
+    /* nav element shouldn't take flex space â€” its dropdown is absolute */
     .nav-container nav {
         position: static;
         width: 0;
@@ -996,11 +1074,11 @@ footer .logo {
         left: 0;
         right: 0;
         width: 100vw;
-        background-color: var(--bg-white);
+        background-color: var(--bg-navy);
         padding: 1rem 2rem 1.5rem;
         gap: 0;
-        border-bottom: 1px solid var(--color-border-gray);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     .nav-links.open {
@@ -1014,12 +1092,73 @@ footer .logo {
     .nav-links a {
         display: block;
         padding: 0.75rem 0;
-        border-bottom: 1px solid var(--color-border-gray);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    header .nav-links a {
+        color: #FFFFFF;
+    }
+
+    header .nav-links a:hover {
+        color: #D4743A;
     }
 
     .nav-links li:last-child a {
         border-bottom: none;
         margin-top: 0.5rem;
+        display: inline-block;
+        width: auto;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+    .nav-links li:last-child {
+        border-top: none;
         text-align: center;
+    }
+
+    .nav-links li:nth-last-child(2) a {
+        border-bottom: none;
+    }
+}
+
+/* Animation pause/play button */
+.anim-pause-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    background: var(--shadow-accent);
+    border: none;
+    border-radius: 50%;
+    color: #1B2E4B;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: none;
+}
+.anim-pause-btn:focus-visible {
+    outline: 2px solid var(--color-primary-btn);
+    outline-offset: 2px;
+}
+.anim-pause-btn:hover {
+    background: #C5B9A8; /* Warm Gray */
+}
+.anim-btn-label {
+    display: none;
+}
+.hero-visual {
+    position: relative;
+}
+
+/* Reduced motion â€” disable looping animations for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .bulb-leader,
+    .bulb-follower {
+        animation: none;
     }
 }

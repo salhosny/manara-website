@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Path Tracer</title>
+<style>
+  body { margin: 0; background: #222; display: flex; flex-direction: column; align-items: center; font-family: sans-serif; color: #fff; }
+  h2 { margin: 10px 0 4px; }
+  p  { margin: 0 0 8px; font-size: 13px; color: #aaa; }
+  #wrap { position: relative; cursor: crosshair; }
+  #wrap img { display: block; max-width: 800px; max-height: 800px; }
+  #overlay { position: absolute; top: 0; left: 0; pointer-events: none; }
+  .controls { margin: 10px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+  button { padding: 8px 16px; font-size: 14px; cursor: pointer; border-radius: 4px; border: none; }
+  #undo  { background: #555; color: #fff; }
+  #clear { background: #933; color: #fff; }
+  #copy  { background: #2a7; color: #fff; }
+  #out   { width: 760px; height: 80px; background: #111; color: #9fd; font-family: monospace;
+           font-size: 11px; padding: 6px; border: 1px solid #444; resize: none; }
+</style>
+</head>
+<body>
+<h2>Click to trace the path — follow the line from start to end</h2>
+<p>Click along the drawing. Undo = last point. Clear = restart. Copy = grab the path data.</p>
+
+<div id="wrap">
+  <img id="img" src="Images/light-bulb-in-head-in-one-single-continuous-one-line-drawing-simple-lineart-concept-of-idea-and-imagine-illustration-vector.jpg">
+  <svg id="overlay"></svg>
+</div>
+
+<div class="controls">
+  <button id="undo">Undo last</button>
+  <button id="clear">Clear all</button>
+  <button id="copy">Copy path d=</button>
+  <span id="count" style="line-height:34px;font-size:13px;">0 points</span>
+</div>
+<textarea id="out" readonly placeholder="Path will appear here..."></textarea>
+
+<script>
+const img = document.getElementById('img');
+const wrap = document.getElementById('wrap');
+const svg  = document.getElementById('overlay');
+const out  = document.getElementById('out');
+const count = document.getElementById('count');
+
+let pts = [];
+let W = 0, H = 0, iW = 0, iH = 0;
+
+img.onload = () => init();
+if (img.complete) init();
+
+function init() {
+  iW = img.naturalWidth;
+  iH = img.naturalHeight;
+  W  = img.clientWidth  || img.offsetWidth;
+  H  = img.clientHeight || img.offsetHeight;
+  svg.setAttribute('width',  W);
+  svg.setAttribute('height', H);
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+}
+
+window.addEventListener('resize', init);
+
+wrap.addEventListener('click', e => {
+  const rect = wrap.getBoundingClientRect();
+  const cx = e.clientX - rect.left;
+  const cy = e.clientY - rect.top;
+  // Normalise to image natural size
+  const W2 = img.offsetWidth, H2 = img.offsetHeight;
+  const nx = Math.round(cx / W2 * iW);
+  const ny = Math.round(cy / H2 * iH);
+  pts.push([nx, ny, cx, cy]);
+  render();
+});
+
+document.getElementById('undo').onclick = () => { pts.pop(); render(); };
+document.getElementById('clear').onclick = () => { pts = []; render(); };
+document.getElementById('copy').onclick = () => {
+  out.select(); document.execCommand('copy');
+  alert('Copied!');
+};
+
+function render() {
+  svg.innerHTML = '';
+  if (pts.length === 0) { out.value = ''; count.textContent = '0 points'; return; }
+
+  // Draw line through screen coords
+  if (pts.length > 1) {
+    const pl = document.createElementNS('http://www.w3.org/2000/svg','polyline');
+    pl.setAttribute('points', pts.map(p => `${p[2]},${p[3]}`).join(' '));
+    pl.setAttribute('fill','none');
+    pl.setAttribute('stroke','#9FD7ED');
+    pl.setAttribute('stroke-width','2');
+    svg.appendChild(pl);
+  }
+
+  // Draw dots
+  pts.forEach((p, i) => {
+    const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    c.setAttribute('cx', p[2]); c.setAttribute('cy', p[3]); c.setAttribute('r', i===0?6:4);
+    c.setAttribute('fill', i===0 ? '#FF6D00' : '#9FD7ED');
+    svg.appendChild(c);
+  });
+
+  // Build path d using natural image coords
+  const d = 'M ' + pts.map(p => `${p[0]},${p[1]}`).join(' L ');
+  out.value = d;
+  count.textContent = `${pts.length} points`;
+}
+</script>
+</body>
+</html>
