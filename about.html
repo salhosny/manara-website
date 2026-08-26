@@ -14,7 +14,7 @@
     }
 
     .about-section {
-      padding: 3rem 0;
+      padding: 2.5rem 0;
     }
 
     .content-block {
@@ -24,16 +24,21 @@
 
     .content-block h2 {
       font-size: 2.25rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.35rem;
       color: var(--color-text-primary);
       /* Dark Navy */
     }
 
     .content-block p {
       font-size: 1.25rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.4rem;
       line-height: 1.8;
       color: var(--color-text-primary);
+    }
+
+    /* Last paragraph margin was stacking on section padding — looked like a font gap */
+    .content-block p:last-of-type {
+      margin-bottom: 0;
     }
   </style>
 </head>
@@ -101,8 +106,7 @@
         <h2>We’re Here to Help</h2>
         <p>At Manara, we work as an extension of your team, completely aligned with your processes and objectives. Think
           of us as an extra set of hands—ready, reliable, and always on the same page.</p>
-        <br>
-        <a href="index.html#contact" class="btn btn-primary">Get In Touch</a>
+        <a href="index.html#contact" class="btn btn-primary" style="margin-top: 2rem;">Get In Touch</a>
       </div>
     </section>
 
