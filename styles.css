@@ -20,6 +20,16 @@
     /* Shared reading-width (matches about page .content-block) */
     --content-max: 800px;
 
+    /* Type Scale — single source of truth for headings & body copy.
+       Redefined per breakpoint band below so every section shrinks in
+       step instead of drifting to arbitrary, unrelated values. */
+    --fs-section-title: 2.5rem;  /* h2 section headings (Our Commitment, What We Do, ...) */
+    --fs-lead: 1.15rem;          /* intro / lead paragraphs under a heading */
+    --fs-body: 1rem;             /* secondary copy inside cards */
+
+    /* Section rhythm — vertical padding shared by all .section blocks */
+    --space-section: 4.5rem;
+
     /* Text Colors */
     --color-text-primary: #1B2E4B;
     /* Deep Navy â€” 60% dominant tone */
@@ -32,7 +42,7 @@
 
     /* Borders */
     --color-border-highlight: #D4743A;
-    --color-border-subtle: #C5B9A8; /* Warm Gray â€” replaces off-palette #C5B9A8 /* Warm Gray */ */
+    --color-border-subtle: #C5B9A8; /* Warm Gray */
     --color-border-neon: #1B2E4B;
 
     /* Backgrounds */
@@ -193,7 +203,7 @@ img {
 }
 
 .section {
-    padding: 5rem 0;
+    padding: var(--space-section) 0;
     position: relative;
     scroll-margin-top: 100px; /* Offset for sticky header */
 }
@@ -523,7 +533,6 @@ header .hamburger span {
 /* Services Section */
 .services {
     background-color: var(--bg-white);
-    padding-bottom: 2rem;
 }
 
 .services .text-center {
@@ -531,7 +540,7 @@ header .hamburger span {
 }
 
 .services-subtitle {
-    font-size: 1.1rem;
+    font-size: var(--fs-lead);
     line-height: 1.7;
     color: var(--color-text-primary);
     max-width: 560px;
@@ -539,7 +548,7 @@ header .hamburger span {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: var(--fs-section-title);
     margin-bottom: 1rem;
     position: relative;
     display: inline-block;
@@ -600,7 +609,7 @@ header .hamburger span {
 }
 
 .service-card p {
-    font-size: 0.95rem;
+    font-size: var(--fs-body);
     line-height: 1.65;
     opacity: 0.75;
 }
@@ -629,12 +638,11 @@ header .hamburger span {
 }
 
 .commitment-content h2 {
-    font-size: 2.5rem;
     margin-bottom: 2rem;
 }
 
 .commitment-content p {
-    font-size: 1.15rem;
+    font-size: var(--fs-lead);
     margin-bottom: 1.5rem;
 }
 
@@ -651,7 +659,7 @@ header .hamburger span {
 }
 
 .about-hero p {
-    font-size: 1.15rem;
+    font-size: var(--fs-lead);
     line-height: 1.7;
     max-width: var(--content-max);
     margin: 0 auto;
@@ -675,13 +683,13 @@ header .hamburger span {
 }
 
 .content-block h2 {
-    font-size: 2.5rem;
+    font-size: var(--fs-section-title);
     margin-bottom: 1.35rem;
     color: var(--color-text-primary);
 }
 
 .content-block p {
-    font-size: 1.15rem;
+    font-size: var(--fs-lead);
     margin-bottom: 1.4rem;
     line-height: 1.8;
     color: var(--color-text-primary);
@@ -698,7 +706,6 @@ header .hamburger span {
 /* Portfolio Section Refactor */
 .portfolio {
     background-color: #D6EAF1;
-    padding-bottom: 8rem;
 }
 
 /* Portfolio Cards Layout */
@@ -800,7 +807,7 @@ header .hamburger span {
 
 
 .project-desc {
-    font-size: 1.1rem;
+    font-size: var(--fs-body);
     color: var(--color-text-primary);
     line-height: 1.7;
     order: 1;
@@ -809,10 +816,6 @@ header .hamburger span {
 
 /* Portfolio Tablet/Mobile Responsiveness */
 @media (max-width: 992px) {
-    .portfolio {
-        padding-bottom: 4rem;
-    }
-
     .portfolio-cards {
         /* Wrap naturally; center leftover cards on incomplete rows */
         display: flex;
@@ -847,10 +850,6 @@ header .hamburger span {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 1.25rem;
-    }
-
-    .project-desc {
-        font-size: 1rem;
     }
 }
 
@@ -889,7 +888,7 @@ header .hamburger span {
 }
 
 .contact-info p {
-    font-size: 1.15rem;
+    font-size: var(--fs-lead);
     color: var(--color-text-primary);
     margin-bottom: 2rem;
 }
@@ -1079,6 +1078,13 @@ footer .logo {
 
 /* Tablet: side-by-side hero; scale type/CTAs together so proportions hold */
 @media (max-width: 900px) and (min-width: 601px) {
+    :root {
+        --fs-section-title: 2.15rem;
+        --fs-lead: 1.1rem;
+        --fs-body: 0.95rem;
+        --space-section: 3rem;
+    }
+
     .hero {
         padding: 5rem 0;
     }
@@ -1118,12 +1124,6 @@ footer .logo {
         min-width: 0;
     }
 
-    .section-title,
-    .commitment-content h2,
-    .content-block h2 {
-        font-size: 2.15rem;
-    }
-
     .about-hero h1 {
         font-size: 2.5rem;
     }
@@ -1131,18 +1131,17 @@ footer .logo {
     .about-hero {
         padding: 5rem 0 3rem;
     }
-
-    .section {
-        padding: 3rem 0;
-    }
-
-    .services {
-        padding-bottom: 1.5rem;
-    }
 }
 
 /* Phone: stack copy, drop illustration */
 @media (max-width: 600px) {
+    :root {
+        --fs-section-title: 1.85rem;
+        --fs-lead: 1rem;
+        --fs-body: 0.95rem;
+        --space-section: 3rem;
+    }
+
     main .container {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
@@ -1169,22 +1168,12 @@ footer .logo {
         margin-bottom: 1.5rem;
     }
 
-    .commitment-content p {
-        font-size: 1rem;
-        line-height: 1.65;
-        margin-bottom: 1.25rem;
-    }
-
     .about-hero {
         padding: 3.5rem 0 2.5rem;
     }
 
     .about-hero h1 {
         font-size: 2.5rem;
-    }
-
-    .content-block h2 {
-        font-size: 2.15rem;
     }
 
     .hero-btns {
@@ -1213,14 +1202,6 @@ footer .logo {
 
     .hero-visual {
         display: none;
-    }
-
-    .section {
-        padding: 3rem 0;
-    }
-
-    .services {
-        padding-bottom: 1.5rem;
     }
 }
 
