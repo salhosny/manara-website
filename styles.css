@@ -345,7 +345,7 @@ img {
 
 /* Header / Nav */
 header {
-    background-color: #E5DDD0;
+    background-color: var(--bg-navy);
     padding: 1.5rem 0;
     min-height: 72px;
     display: flex;
@@ -354,44 +354,41 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(139, 110, 60, 0.25); /* Warm Umber tint */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     transition: border-bottom 0.3s ease;
 }
 
 header.scrolled {
-    border-bottom: 1px solid rgba(139, 110, 60, 0.35); /* Warm Umber tint â€” scrolled */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Logo navy on parchment header */
 header .logo,
 header .logo a {
-    color: #1B2E4B;
+    color: var(--color-white);
 }
 
-/* Nav links navy on parchment header */
 header .nav-links a {
-    color: #1B2E4B;
+    color: var(--color-white);
     font-weight: 500;
 }
 
 header .nav-links a:hover {
-    color: #D4743A;
+    color: var(--accent-sienna);
 }
 
-/* Contact Us button in nav â€” darkened Sienna for WCAG AA contrast */
 header .nav-links .btn-primary {
-    background-color: #B05520; /* Accessible Sienna */
+    background-color: #B05520;
     color: #FFFFFF;
+    border: 2px solid transparent;
 }
 
 header .nav-links .btn-primary:hover {
-    background-color: #1B2E4B;
+    background-color: var(--color-primary-btn-hover);
     color: #FFFFFF;
 }
 
-/* Hamburger bars navy on parchment */
 header .hamburger span {
-    background-color: #1B2E4B;
+    background-color: var(--color-white);
 }
 
 .nav-container {
@@ -426,8 +423,8 @@ header .hamburger span {
 
 /* Hero Section */
 .hero {
-    background-color: var(--bg-ivory);
-    padding: 6rem 0;
+    background-color: var(--bg-white);
+    padding: 8rem 0;
     overflow-x: clip;
 }
 
@@ -472,7 +469,7 @@ header .hamburger span {
     max-width: 315px;
     min-width: 0;
     aspect-ratio: 1 / 1;
-    background-color: var(--shadow-accent);
+    background-color: var(--bg-white);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -525,7 +522,7 @@ header .hamburger span {
 
 /* Services Section */
 .services {
-    background-color: var(--bg-ivory);
+    background-color: var(--bg-white);
     padding-bottom: 2rem;
 }
 
@@ -622,7 +619,7 @@ header .hamburger span {
 
 /* Commitment Section */
 .commitment {
-    background-color: var(--bg-section);
+    background-color: var(--bg-ivory);
 }
 
 .commitment-content {
@@ -643,7 +640,7 @@ header .hamburger span {
 
 /* About Page */
 .about-hero {
-    background-color: var(--bg-ivory);
+    background-color: var(--bg-white);
     padding: 8rem 0 4rem;
     text-align: center;
 }
@@ -662,6 +659,14 @@ header .hamburger span {
 
 .about-section {
     padding: 2.5rem 0;
+}
+
+.about-section--ivory {
+    background-color: var(--bg-ivory);
+}
+
+.about-section--sky {
+    background-color: #D6EAF1;
 }
 
 .content-block {
@@ -692,7 +697,7 @@ header .hamburger span {
 
 /* Portfolio Section Refactor */
 .portfolio {
-    background-color: var(--bg-parchment);
+    background-color: #D6EAF1;
     padding-bottom: 8rem;
 }
 
@@ -710,7 +715,7 @@ header .hamburger span {
 
 /* Project Card Styles */
 .project-col {
-    background: var(--bg-ivory);
+    background: var(--bg-white);
     border: 1px solid var(--color-border-subtle);
     border-radius: 0px;
     /* Square corners to match theme */
@@ -863,7 +868,7 @@ header .hamburger span {
 
 /* Contact Section */
 .contact {
-    background-color: var(--bg-ivory); /* Warm Ivory */
+    background-color: var(--bg-white); /* Warm Ivory */
 }
 
 /* Two-column layout for contact */
@@ -1075,7 +1080,7 @@ footer .logo {
 /* Tablet: side-by-side hero; scale type/CTAs together so proportions hold */
 @media (max-width: 900px) and (min-width: 601px) {
     .hero {
-        padding: 4rem 0 3.5rem;
+        padding: 5rem 0;
     }
 
     .hero-content {
@@ -1144,7 +1149,7 @@ footer .logo {
     }
 
     .hero {
-        padding: 3rem 0 2.5rem;
+        padding: 5.5rem 0;
     }
 
     .hero-content {
@@ -1162,6 +1167,12 @@ footer .logo {
     .hero-text h1 {
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
+    }
+
+    .commitment-content p {
+        font-size: 1rem;
+        line-height: 1.65;
+        margin-bottom: 1.25rem;
     }
 
     .about-hero {
@@ -1350,7 +1361,7 @@ footer .logo {
     width: 36px;
     height: 36px;
     padding: 0;
-    background: var(--shadow-accent);
+    background: var(--bg-white);
     border: none;
     border-radius: 50%;
     color: #1B2E4B;
