@@ -215,7 +215,7 @@ img {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 0.8rem 2rem;
+    padding: 0.65rem 1.75rem;
     font-family: var(--font-body);
     font-weight: 700;
     border-radius: 0px;
@@ -356,8 +356,8 @@ img {
 /* Header / Nav */
 header {
     background-color: var(--bg-navy);
-    padding: 1.5rem 0;
-    min-height: 72px;
+    padding: 0.9rem 0;
+    min-height: 60px;
     display: flex;
     align-items: center;
     box-sizing: border-box;
