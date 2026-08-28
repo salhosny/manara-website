@@ -394,8 +394,8 @@ header .nav-links .btn-primary {
 }
 
 header .nav-links .btn-primary:hover {
-    background-color: var(--color-primary-btn-hover);
-    color: #FFFFFF;
+    background-color: var(--color-white);
+    color: var(--color-primary-btn);
 }
 
 header .hamburger span {
