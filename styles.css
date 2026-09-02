@@ -30,6 +30,9 @@
     /* Section rhythm — vertical padding shared by all .section blocks */
     --space-section: 4.5rem;
 
+    /* Brand mark — rays stay this gold regardless of light/dark background */
+    --logo-ray-color: #ffbd59;
+
     /* Text Colors */
     --color-text-primary: #1B2E4B;
     /* Deep Navy â€” 60% dominant tone */
@@ -414,6 +417,38 @@ header .hamburger span {
     font-size: 1.8rem;
     font-weight: bold;
     color: var(--color-text-primary);
+}
+
+/* Brand wordmark — SVG asset (white on navy header/footer) */
+.brand-logo {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+}
+
+.brand-logo-img {
+    display: block;
+    height: 36px;
+    width: auto;
+    max-width: 108px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    line-height: 0;
+}
+
+header .brand-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+
+footer .brand-logo-img {
+    height: 34px;
+    max-width: 102px;
 }
 
 .nav-links {
