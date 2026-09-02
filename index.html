@@ -292,10 +292,9 @@ c-6 -70 -31 -126 -69 -153 -24 -18 -30 -18 -58 -7 -66 27 -78 88 -30 144 34
                     <p style="font-size:0.85rem;color:var(--color-text-primary);margin-bottom:1rem;">
                         Fields marked <span aria-hidden="true">*</span><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">with an asterisk</span> are required.
                     </p>
-                    <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-                        <input type="hidden" name="form-name" value="contact">
+                    <form id="contact-form" action="https://submit-form.com/nBbRGthzg" method="POST" novalidate>
                         <p class="hidden" aria-hidden="true" style="display:none">
-                            <label>Don't fill this out: <input name="bot-field"></label>
+                            <label>Don't fill this out: <input type="text" name="_gotcha"></label>
                         </p>
                         <div class="form-group">
                             <label for="firstName">First Name <span aria-hidden="true">*</span></label>
@@ -392,7 +391,7 @@ c-6 -70 -31 -126 -69 -153 -24 -18 -30 -18 -58 -7 -66 27 -78 88 -30 144 34
             });
         });
 
-        /* Contact form — client-side validation, then submit to Netlify Forms */
+        /* Contact form — client-side validation, then submit to Formspark */
         var contactForm = document.getElementById('contact-form');
         if (contactForm) {
             contactForm.addEventListener('submit', function (e) {
@@ -428,10 +427,10 @@ c-6 -70 -31 -126 -69 -153 -24 -18 -30 -18 -58 -7 -66 27 -78 88 -30 144 34
                     submitBtn.textContent = 'Sending...';
                 }
 
-                fetch('/', {
+                fetch(contactForm.action, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams(new FormData(contactForm)).toString()
+                    headers: { 'Accept': 'application/json' },
+                    body: new FormData(contactForm)
                 })
                 .then(function (response) {
                     if (!response.ok) { throw new Error('Form submission failed'); }
