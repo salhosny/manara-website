@@ -958,14 +958,27 @@ footer .brand-logo-img {
 @media (max-width: 768px) {
     .contact-layout {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.25rem;
     }
 
     .contact-info {
         text-align: center;
     }
 
+    .contact-info p {
+        margin-bottom: 1rem;
+    }
+
+    .contact-visual {
+        width: 55%;
+        max-width: 220px;
+        margin-bottom: 0.25rem;
+    }
+
     .contact-container {
+        max-width: 460px;
+        width: 100%;
+        margin: 0 auto;
         padding: 1.5rem;
     }
 }
