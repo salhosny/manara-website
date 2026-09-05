@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manara | Illuminating Minds</title>
+    <link rel="icon" href="Images/manara_rays_favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -16,7 +17,11 @@
     <!-- Header -->
     <header>
         <div class="container nav-container">
-            <div class="logo"><a href="index.html"><img src="Images/manara_logo_nav.png" alt="Manara" height="55" style="display:block;"></a></div>
+            <div class="logo">
+                <a href="index.html" class="brand-logo" aria-label="Manara — home">
+                    <img src="Images/manara_logo_v2_2_white.svg" alt="" class="brand-logo-img" width="108" height="36">
+                </a>
+            </div>
             <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -228,16 +233,6 @@ c-6 -70 -31 -126 -69 -153 -24 -18 -30 -18 -58 -7 -66 27 -78 88 -30 144 34
         </div>
     </section>
 
-    <!-- Wave Divider -->
-    <div class="wave-divider">
-        <div class="container">
-            <svg viewBox="0 0 400 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                <path d="M0,15 C50,0 100,30 150,15 C200,0 250,30 300,15 C350,0 400,30 400,15" fill="none"
-                    stroke="var(--color-border-gray)" stroke-width="1.5" />
-            </svg>
-        </div>
-    </div>
-
     <!-- Recent Projects Section -->
     <section id="portfolio" class="section portfolio">
         <div class="container">
@@ -252,7 +247,7 @@ c-6 -70 -31 -126 -69 -153 -24 -18 -30 -18 -58 -7 -66 27 -78 88 -30 144 34
                     <div class="project-content-wrapper">
                         <h3>Pharmaceutical</h3>
                         <div class="project-visual">
-                            <img src="Images/pharma_2.png" alt="Pharmaceutical Project" class="project-image pharma-image">
+                            <img src="Images/pharma_2.webp" alt="Pharmaceutical Project" class="project-image pharma-image">
                         </div>
                         <p class="project-desc">Developed compliance and interactive training modules for a leading
                             pharmaceutical company to ensure regulatory standards.</p>
@@ -262,7 +257,7 @@ c-6 -70 -31 -126 -69 -153 -24 -18 -30 -18 -58 -7 -66 27 -78 88 -30 144 34
                     <div class="project-content-wrapper">
                         <h3>Higher Education</h3>
                         <div class="project-visual">
-                            <img src="Images/higher_ed.png" alt="Higher Education Project" class="project-image">
+                            <img src="Images/higher_ed.webp" alt="Higher Education Project" class="project-image">
                         </div>
                         <p class="project-desc">Redesigned core curriculum courses for a major university's online
                             program, focusing on student engagement and retention.</p>
@@ -272,7 +267,7 @@ c-6 -70 -31 -126 -69 -153 -24 -18 -30 -18 -58 -7 -66 27 -78 88 -30 144 34
                     <div class="project-content-wrapper">
                         <h3>Construction</h3>
                         <div class="project-visual">
-                            <img src="Images/construction_image.png" alt="Construction Project" class="project-image">
+                            <img src="Images/construction_image.webp" alt="Construction Project" class="project-image">
                         </div>
                         <p class="project-desc">Implemented safety training and certification tracking systems for a
                             large-scale construction workforce.</p>
@@ -290,37 +285,43 @@ c-6 -70 -31 -126 -69 -153 -24 -18 -30 -18 -58 -7 -66 27 -78 88 -30 144 34
                     <h2 class="section-title">Get In Touch</h2>
                     <p>Ready to start your project? Send us a message.</p>
                     <div class="contact-visual">
-                        <img src="Images/mail_image_4.png" alt="Get in touch" class="contact-image">
+                        <img src="Images/mail_image_4.webp" alt="Get in touch" class="contact-image">
                     </div>
                 </div>
                 <div class="contact-container">
                     <p style="font-size:0.85rem;color:var(--color-text-primary);margin-bottom:1rem;">
                         Fields marked <span aria-hidden="true">*</span><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">with an asterisk</span> are required.
                     </p>
-                    <form id="contact-form" novalidate>
+                    <form id="contact-form" action="https://submit-form.com/nBbRGthzg" method="POST" novalidate>
+                        <p class="hidden" aria-hidden="true" style="display:none">
+                            <label>Don't fill this out: <input type="text" name="_gotcha"></label>
+                        </p>
                         <div class="form-group">
                             <label for="firstName">First Name <span aria-hidden="true">*</span></label>
-                            <input type="text" id="firstName" class="form-control" placeholder="Jane" required aria-required="true">
+                            <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Jane" required aria-required="true">
                         </div>
                         <div class="form-group">
                             <label for="lastName">Last Name <span aria-hidden="true">*</span></label>
-                            <input type="text" id="lastName" class="form-control" placeholder="Doe" required aria-required="true">
+                            <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Doe" required aria-required="true">
                         </div>
                         <div class="form-group">
                             <label for="email">Email <span aria-hidden="true">*</span></label>
-                            <input type="email" id="email" class="form-control" placeholder="jane@example.com" required aria-required="true">
+                            <input type="email" id="email" name="email" class="form-control" placeholder="jane@example.com" required aria-required="true">
                         </div>
                         <div class="form-group">
                             <label for="message">Message <span aria-hidden="true">*</span></label>
-                            <textarea id="message" class="form-control"
+                            <textarea id="message" name="message" class="form-control"
                                 placeholder="Tell us about your project..." required aria-required="true"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                        <p id="form-success" role="alert" aria-live="polite" style="display:none;margin-top:1rem;padding:0.75rem 1rem;background:var(--bg-parchment);border-left:3px solid var(--color-primary-btn);font-size:0.95rem;">
+                        <p id="form-success" role="alert" aria-live="polite" style="display:none;margin-top:1rem;padding:0.75rem 1rem;background:var(--bg-white);border-left:3px solid var(--color-primary-btn);font-size:0.95rem;">
                             Thank you! We'll be in touch shortly.
                         </p>
                         <p id="form-error" role="alert" aria-live="assertive" style="display:none;margin-top:1rem;padding:0.75rem 1rem;background:#fef2f2;border-left:3px solid #b91c1c;font-size:0.95rem;color:#7f1d1d;">
                             Please fill in all required fields before sending.
+                        </p>
+                        <p id="form-submit-error" role="alert" aria-live="assertive" style="display:none;margin-top:1rem;padding:0.75rem 1rem;background:#fef2f2;border-left:3px solid #b91c1c;font-size:0.95rem;color:#7f1d1d;">
+                            Something went wrong. Please try again or email us at info@manaralearn.com.
                         </p>
                     </form>
                 </div>
@@ -335,7 +336,9 @@ c-6 -70 -31 -126 -69 -153 -24 -18 -30 -18 -58 -7 -66 27 -78 88 -30 144 34
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
-                    <div class="logo">Manara</div>
+                    <div class="logo">
+                        <img src="Images/manara_logo_v2_2_white.svg" alt="Manara" class="brand-logo-img" width="108" height="36">
+                    </div>
                     <p>Illuminating minds through design.</p>
                 </div>
                 <div class="footer-col">
@@ -355,7 +358,7 @@ c-6 -70 -31 -126 -69 -153 -24 -18 -30 -18 -58 -7 -66 27 -78 88 -30 144 34
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2024 Manara Learn. All rights reserved.
+                &copy; 2026 Manara Learn. All rights reserved.
             </div>
         </div>
     </footer>
@@ -388,13 +391,15 @@ c-6 -70 -31 -126 -69 -153 -24 -18 -30 -18 -58 -7 -66 27 -78 88 -30 144 34
             });
         });
 
-        /* Contact form — client-side validation & accessible feedback */
+        /* Contact form — client-side validation, then submit to Formspark */
         var contactForm = document.getElementById('contact-form');
         if (contactForm) {
             contactForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 var success = document.getElementById('form-success');
                 var error   = document.getElementById('form-error');
+                var submitError = document.getElementById('form-submit-error');
+                var submitBtn = contactForm.querySelector('button[type="submit"]');
                 var fields  = contactForm.querySelectorAll('[required]');
                 var valid   = true;
 
@@ -402,23 +407,47 @@ c-6 -70 -31 -126 -69 -153 -24 -18 -30 -18 -58 -7 -66 27 -78 88 -30 144 34
                     if (!field.value.trim()) { valid = false; }
                 });
 
-                /* Also check native email validity */
                 var emailField = document.getElementById('email');
                 if (emailField && emailField.value && !emailField.validity.valid) { valid = false; }
 
-                if (valid) {
-                    error.style.display   = 'none';
-                    success.style.display = 'block';
-                    contactForm.reset();
-                    success.focus();
-                } else {
+                if (!valid) {
                     success.style.display = 'none';
-                    error.style.display   = 'block';
-                    /* Focus first empty required field */
+                    submitError.style.display = 'none';
+                    error.style.display = 'block';
                     for (var i = 0; i < fields.length; i++) {
                         if (!fields[i].value.trim()) { fields[i].focus(); break; }
                     }
+                    return;
                 }
+
+                error.style.display = 'none';
+                submitError.style.display = 'none';
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                }
+
+                fetch(contactForm.action, {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: new FormData(contactForm)
+                })
+                .then(function (response) {
+                    if (!response.ok) { throw new Error('Form submission failed'); }
+                    success.style.display = 'block';
+                    contactForm.reset();
+                    success.focus();
+                })
+                .catch(function () {
+                    submitError.style.display = 'block';
+                    submitError.focus();
+                })
+                .finally(function () {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Send Message';
+                    }
+                });
             });
         }
     </script>

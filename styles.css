@@ -17,6 +17,22 @@
     --font-heading: 'Georgia', serif;
     --font-body: 'Outfit', 'Gilroy', Arial, Helvetica, sans-serif;
 
+    /* Shared reading-width (matches about page .content-block) */
+    --content-max: 800px;
+
+    /* Type Scale — single source of truth for headings & body copy.
+       Redefined per breakpoint band below so every section shrinks in
+       step instead of drifting to arbitrary, unrelated values. */
+    --fs-section-title: 2.5rem;  /* h2 section headings (Our Commitment, What We Do, ...) */
+    --fs-lead: 1.15rem;          /* intro / lead paragraphs under a heading */
+    --fs-body: 1rem;             /* secondary copy inside cards */
+
+    /* Section rhythm — vertical padding shared by all .section blocks */
+    --space-section: 4.5rem;
+
+    /* Brand mark — rays stay this gold regardless of light/dark background */
+    --logo-ray-color: #ffbd59;
+
     /* Text Colors */
     --color-text-primary: #1B2E4B;
     /* Deep Navy â€” 60% dominant tone */
@@ -29,7 +45,7 @@
 
     /* Borders */
     --color-border-highlight: #D4743A;
-    --color-border-subtle: #C5B9A8; /* Warm Gray â€” replaces off-palette #C5B9A8 /* Warm Gray */ */
+    --color-border-subtle: #C5B9A8; /* Warm Gray */
     --color-border-neon: #1B2E4B;
 
     /* Backgrounds */
@@ -190,7 +206,7 @@ img {
 }
 
 .section {
-    padding: 5rem 0;
+    padding: var(--space-section) 0;
     position: relative;
     scroll-margin-top: 100px; /* Offset for sticky header */
 }
@@ -202,7 +218,7 @@ img {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 0.8rem 2rem;
+    padding: 0.65rem 1.75rem;
     font-family: var(--font-body);
     font-weight: 700;
     border-radius: 0px;
@@ -280,8 +296,12 @@ img {
 
 .hero-btns .btn {
     white-space: nowrap;
-    flex: 1;
+    flex: 1 1 auto;
     text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 /* On very narrow screens, allow buttons to compress slightly */
@@ -338,53 +358,51 @@ img {
 
 /* Header / Nav */
 header {
-    background-color: #E5DDD0;
-    padding: 1.5rem 0;
-    min-height: 72px;
+    background-color: var(--bg-navy);
+    padding: 1.1rem 0;
+    min-height: 64px;
     display: flex;
     align-items: center;
     box-sizing: border-box;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(139, 110, 60, 0.25); /* Warm Umber tint */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     transition: border-bottom 0.3s ease;
 }
 
 header.scrolled {
-    border-bottom: 1px solid rgba(139, 110, 60, 0.35); /* Warm Umber tint â€” scrolled */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Logo navy on parchment header */
 header .logo,
 header .logo a {
-    color: #1B2E4B;
+    color: var(--color-white);
 }
 
-/* Nav links navy on parchment header */
 header .nav-links a {
-    color: #1B2E4B;
+    color: var(--color-white);
     font-weight: 500;
 }
 
 header .nav-links a:hover {
-    color: #D4743A;
+    color: var(--accent-sienna);
 }
 
-/* Contact Us button in nav â€” darkened Sienna for WCAG AA contrast */
 header .nav-links .btn-primary {
-    background-color: #B05520; /* Accessible Sienna */
+    background-color: #B05520;
     color: #FFFFFF;
+    border: 2px solid transparent;
+    padding: 0.5rem 1.4rem;
 }
 
 header .nav-links .btn-primary:hover {
-    background-color: #1B2E4B;
-    color: #FFFFFF;
+    background-color: var(--color-white);
+    color: var(--color-primary-btn);
 }
 
-/* Hamburger bars navy on parchment */
 header .hamburger span {
-    background-color: #1B2E4B;
+    background-color: var(--color-white);
 }
 
 .nav-container {
@@ -399,6 +417,38 @@ header .hamburger span {
     font-size: 1.8rem;
     font-weight: bold;
     color: var(--color-text-primary);
+}
+
+/* Brand wordmark — SVG asset (white on navy header/footer) */
+.brand-logo {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+}
+
+.brand-logo-img {
+    display: block;
+    height: 36px;
+    width: auto;
+    max-width: 108px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    line-height: 0;
+}
+
+header .brand-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+
+footer .brand-logo-img {
+    height: 34px;
+    max-width: 102px;
 }
 
 .nav-links {
@@ -419,25 +469,28 @@ header .hamburger span {
 
 /* Hero Section */
 .hero {
-    background-color: var(--bg-ivory);
-    padding: 6rem 0;
+    background-color: var(--bg-white);
+    padding: 8rem 0;
     overflow-x: clip;
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    gap: 8.5rem;
     overflow: visible;
+}
+
+.hero-text {
+    flex: 0 1 28rem;
+    max-width: 28rem;
 }
 
 .hero-text h1 {
     font-size: 2.2rem;
     /* ~35px */
     color: var(--color-text-primary);
-    margin-bottom: 2rem;
-    font-weight: 700;
     margin-bottom: 2rem;
     font-weight: 700;
     line-height: 1.3;
@@ -457,10 +510,12 @@ header .hamburger span {
 
 .hero-visual {
     position: relative;
-    width: 100%;
+    flex: 0 1 315px;
+    width: auto;
     max-width: 315px;
+    min-width: 0;
     aspect-ratio: 1 / 1;
-    background-color: var(--shadow-accent);
+    background-color: var(--bg-white);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -469,7 +524,6 @@ header .hamburger span {
     box-shadow: none;
     border: none;
     overflow: hidden;
-    justify-self: center;
 }
 
 .hero-shape-bg {
@@ -514,7 +568,7 @@ header .hamburger span {
 
 /* Services Section */
 .services {
-    background-color: var(--bg-ivory);
+    background-color: var(--bg-white);
 }
 
 .services .text-center {
@@ -522,7 +576,7 @@ header .hamburger span {
 }
 
 .services-subtitle {
-    font-size: 1.1rem;
+    font-size: var(--fs-lead);
     line-height: 1.7;
     color: var(--color-text-primary);
     max-width: 560px;
@@ -530,24 +584,10 @@ header .hamburger span {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: var(--fs-section-title);
     margin-bottom: 1rem;
     position: relative;
     display: inline-block;
-}
-
-/* Wave Divider */
-.wave-divider {
-    padding: 2rem 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    background-color: var(--bg-ivory);
-}
-
-.wave-divider svg {
-    width: 100%;
-    height: 30px;
 }
 
 .services-grid {
@@ -605,7 +645,7 @@ header .hamburger span {
 }
 
 .service-card p {
-    font-size: 0.95rem;
+    font-size: var(--fs-body);
     line-height: 1.65;
     opacity: 0.75;
 }
@@ -624,29 +664,84 @@ header .hamburger span {
 
 /* Commitment Section */
 .commitment {
-    background-color: var(--bg-section);
+    background-color: var(--bg-ivory);
 }
 
 .commitment-content {
-    max-width: 800px;
+    max-width: var(--content-max);
     margin: 0 auto;
     text-align: center;
 }
 
 .commitment-content h2 {
-    font-size: 2.5rem;
     margin-bottom: 2rem;
 }
 
 .commitment-content p {
-    font-size: 1.15rem;
+    font-size: var(--fs-lead);
     margin-bottom: 1.5rem;
+}
+
+/* About Page */
+.about-hero {
+    background-color: var(--bg-white);
+    padding: 8rem 0 5.5rem;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.about-hero p {
+    font-size: var(--fs-lead);
+    line-height: 1.7;
+    max-width: var(--content-max);
+    margin: 0 auto;
+}
+
+.about-section {
+    padding: 2.5rem 0;
+}
+
+.about-section--ivory {
+    background-color: var(--bg-ivory);
+}
+
+.about-section--sky {
+    background-color: #D6EAF1;
+}
+
+.content-block {
+    max-width: var(--content-max);
+    margin: 0 auto;
+}
+
+.content-block h2 {
+    font-size: var(--fs-section-title);
+    margin-bottom: 1.35rem;
+    color: var(--color-text-primary);
+}
+
+.content-block p {
+    font-size: var(--fs-lead);
+    margin-bottom: 1.4rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+}
+
+.content-block p:last-of-type {
+    margin-bottom: 0;
+}
+
+.content-block .btn-primary {
+    margin-top: 2rem;
 }
 
 /* Portfolio Section Refactor */
 .portfolio {
-    background-color: var(--bg-parchment);
-    padding-bottom: 8rem;
+    background-color: #D6EAF1;
 }
 
 /* Portfolio Cards Layout */
@@ -663,7 +758,7 @@ header .hamburger span {
 
 /* Project Card Styles */
 .project-col {
-    background: var(--bg-ivory);
+    background: var(--bg-white);
     border: 1px solid var(--color-border-subtle);
     border-radius: 0px;
     /* Square corners to match theme */
@@ -748,7 +843,7 @@ header .hamburger span {
 
 
 .project-desc {
-    font-size: 1.1rem;
+    font-size: var(--fs-body);
     color: var(--color-text-primary);
     line-height: 1.7;
     order: 1;
@@ -758,32 +853,57 @@ header .hamburger span {
 /* Portfolio Tablet/Mobile Responsiveness */
 @media (max-width: 992px) {
     .portfolio-cards {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        /* Wrap naturally; center leftover cards on incomplete rows */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.25rem;
+    }
+
+    .project-col {
+        flex: 0 1 280px;
+        width: 100%;
+        max-width: 300px;
+        padding: 1.25rem 1.25rem 1.5rem;
     }
 
     .project-content-wrapper {
-        max-width: 600px;
+        max-width: none;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .project-col h3 {
+        min-height: 0;
+        margin-bottom: 1rem;
+        font-size: 1.35rem;
     }
 
     .project-visual {
         height: auto;
         aspect-ratio: 4 / 3;
-        max-width: 100%;
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1.25rem;
     }
 }
 
 @media (max-width: 600px) {
+    .project-col {
+        flex: 1 1 100%;
+        max-width: 22rem;
+        padding: 1rem 1rem 1.25rem;
+    }
+
     .project-visual {
-        max-width: 100%;
+        max-width: 180px;
     }
 }
 
 /* Contact Section */
 .contact {
-    background-color: var(--bg-ivory); /* Warm Ivory */
+    background-color: var(--bg-white); /* Warm Ivory */
 }
 
 /* Two-column layout for contact */
@@ -804,7 +924,7 @@ header .hamburger span {
 }
 
 .contact-info p {
-    font-size: 1.15rem;
+    font-size: var(--fs-lead);
     color: var(--color-text-primary);
     margin-bottom: 2rem;
 }
@@ -838,14 +958,27 @@ header .hamburger span {
 @media (max-width: 768px) {
     .contact-layout {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.25rem;
     }
 
     .contact-info {
         text-align: center;
     }
 
+    .contact-info p {
+        margin-bottom: 1rem;
+    }
+
+    .contact-visual {
+        width: 55%;
+        max-width: 220px;
+        margin-bottom: 0.25rem;
+    }
+
     .contact-container {
+        max-width: 460px;
+        width: 100%;
+        margin: 0 auto;
         padding: 1.5rem;
     }
 }
@@ -978,28 +1111,146 @@ footer .logo {
     }
 }
 
-/* Responsive â€” Hero stacks before buttons would need to wrap */
+/*
+ * Responsive breakpoints (three bands):
+ *   > 900px           — desktop (side-by-side hero)
+ *   601px – 900px     — tablet (side-by-side, same type size)
+ *   ≤ 600px           — phone (stacked hero, image hidden)
+ */
+
+/* Shared body reading width below desktop; nav/footer keep full .container */
 @media (max-width: 900px) {
+    main .container {
+        max-width: var(--content-max);
+    }
+}
+
+/* Tablet: side-by-side hero; scale type/CTAs together so proportions hold */
+@media (max-width: 900px) and (min-width: 601px) {
+    :root {
+        --fs-section-title: 2.15rem;
+        --fs-lead: 1.1rem;
+        --fs-body: 0.95rem;
+        --space-section: 3rem;
+    }
+
+    .hero {
+        padding: 5rem 0;
+    }
+
     .hero-content {
-        grid-template-columns: 1fr;
+        gap: clamp(1.25rem, 3.5vw, 2.75rem);
+        min-width: 0;
+    }
+
+    .hero-text {
+        flex: 1 1 26rem;
+        min-width: 0;
+        max-width: 26rem;
+    }
+
+    .hero-text h1 {
+        font-size: 1.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-btns {
+        gap: 0.5rem;
+    }
+
+    .hero-btns .btn {
+        padding: 0.6rem 1.1rem;
+        font-size: 0.9rem;
+    }
+
+    .manara-signature {
+        height: 26px;
+    }
+
+    .hero-visual {
+        flex: 0 1 210px;
+        max-width: 210px;
+        min-width: 0;
+    }
+
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-hero {
+        padding: 5rem 0 4rem;
+    }
+}
+
+/* Phone: stack copy, drop illustration */
+@media (max-width: 600px) {
+    :root {
+        --fs-section-title: 1.85rem;
+        --fs-lead: 1rem;
+        --fs-body: 0.95rem;
+        --space-section: 3rem;
+    }
+
+    main .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .hero {
+        padding: 5.5rem 0;
+    }
+
+    .hero-content {
+        flex-direction: column;
         text-align: center;
+        gap: 0;
+    }
+
+    .hero-text {
+        flex: 0 0 auto;
+        max-width: var(--content-max);
+        width: 100%;
     }
 
     .hero-text h1 {
         font-size: 1.8rem;
+        margin-bottom: 1.5rem;
     }
 
-    .hero-text p {
-        margin: 0 auto 2rem;
+    .about-hero {
+        padding: 3.5rem 0 3.25rem;
+    }
+
+    .about-hero h1 {
+        font-size: 2.5rem;
     }
 
     .hero-btns {
         justify-content: center;
+        max-width: 18rem;
+        width: 100%;
+        margin: 0 auto;
+        gap: 0.5rem;
+    }
+
+    .hero-btns .btn {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 0.7rem 0.85rem;
+        font-size: 0.9rem;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .manara-signature {
+        height: 24px;
+        flex: 0 0 auto;
     }
 
     .hero-visual {
-        margin: 0 auto;
-        max-width: min(315px, calc(100% - 40px));
+        display: none;
     }
 }
 
@@ -1039,14 +1290,20 @@ footer .logo {
 }
 
 @media (max-width: 768px) {
-    /* Prevent horizontal scroll on mobile */
+    /* clip avoids creating a scroll container (hidden breaks position:sticky) */
     html {
         scrollbar-gutter: auto;
-        overflow-x: hidden;    /* needed on html too for iOS Safari */
+        overflow-x: clip;
     }
 
     body {
-        overflow-x: hidden;
+        overflow-x: clip;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
 
     .hamburger {
@@ -1055,11 +1312,12 @@ footer .logo {
         margin-left: auto;
     }
 
+    /* Let the menu position against the sticky header, not the inner container */
     .nav-container {
-        position: relative;
+        position: static;
     }
 
-    /* nav element shouldn't take flex space â€” its dropdown is absolute */
+    /* nav element shouldn't take flex space — its dropdown is absolute */
     .nav-container nav {
         position: static;
         width: 0;
@@ -1073,7 +1331,7 @@ footer .logo {
         top: 100%;
         left: 0;
         right: 0;
-        width: 100vw;
+        width: auto;
         background-color: var(--bg-navy);
         padding: 1rem 2rem 1.5rem;
         gap: 0;
@@ -1133,7 +1391,7 @@ footer .logo {
     width: 36px;
     height: 36px;
     padding: 0;
-    background: var(--shadow-accent);
+    background: var(--bg-white);
     border: none;
     border-radius: 50%;
     color: #1B2E4B;
